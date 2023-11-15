@@ -1,9 +1,13 @@
-import React from "react";
 import "./App.css";
+import { TicketProvider } from "./contexts/TicketContext/TicketContext";
 import Router from "./routes/Router";
 
 function App() {
-  return <Router />;
+  return (
+    <TicketProvider>
+      <Router />;
+    </TicketProvider>
+  );
 }
 
 export default App;

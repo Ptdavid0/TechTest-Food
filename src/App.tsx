@@ -1,13 +1,17 @@
 import "./App.css";
+import FooterComponent from "./components/FooterComponent/FooterComponent";
+import NavbarComponent from "./components/NavbarComponent/NavbarComponent";
 import { TicketProvider } from "./contexts/TicketContext/TicketContext";
 import Router from "./routes/Router";
 
-function App() {
+const App = () => {
   return (
     <TicketProvider>
-      <Router />;
+      <NavbarComponent />
+      <Router />
+      <FooterComponent />
     </TicketProvider>
   );
-}
+};
 
 export default App;

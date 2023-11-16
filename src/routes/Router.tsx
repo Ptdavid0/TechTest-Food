@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import ItemScreen from "../screens/ItemScreen/itemScreen";
+import ItemScreen from "../screens/ItemScreen/ItemScreen";
 
 const Router = () => {
   return (

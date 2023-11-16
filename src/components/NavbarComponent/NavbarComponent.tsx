@@ -18,7 +18,7 @@ const NavbarComponent: React.FC = () => {
   const isTicketEmpty = Object.keys(currentTicket).length === 0;
 
   return (
-    <Container>
+    <Container id="navbar">
       <img src={CompanyLogo} alt="Aiqfome Logo" />
       <LocationComponent />
       <SearchComponent />

@@ -19,7 +19,6 @@ export const Container = styled.footer`
 `;
 
 export const CopyrigthText = styled.span`
-  font-family: Nunito;
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
@@ -28,7 +27,6 @@ export const CopyrigthText = styled.span`
 `;
 
 export const MessageFromCompanyText = styled.span`
-  font-family: Nunito;
   font-size: 14px;
   font-style: normal;
   font-weight: 700;

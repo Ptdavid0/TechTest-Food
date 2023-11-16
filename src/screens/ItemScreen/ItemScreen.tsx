@@ -1,12 +1,22 @@
-import React from "react";
+import React, { useLayoutEffect, useState } from "react";
 
 import { Container } from "./styles";
+import ObservationComponent from "./components/ObservationComponent/ObservationComponent";
 
 const ItemScreen: React.FC = () => {
-  // Calculate the navbar height to place the content below it. What is the best way of doing this ?
-  const navbarHeight = document.getElementById("navbar")?.offsetHeight;
+  const [navbarHeight, setNavbarHeight] = useState<number | null>(null);
 
-  return <Container marginTop={navbarHeight}>Helloo</Container>;
+  useLayoutEffect(() => {
+    const navbarElement = document.getElementById("navbar");
+
+    if (navbarElement) setNavbarHeight(navbarElement.offsetHeight);
+  }, []);
+
+  return (
+    <Container marginTop={navbarHeight}>
+      <ObservationComponent />
+    </Container>
+  );
 };
 
 export default ItemScreen;

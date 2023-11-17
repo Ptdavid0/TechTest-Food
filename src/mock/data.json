@@ -1,0 +1,88 @@
+{
+  "company": {
+    "name": "Matsuri Concept",
+    "logo": ""
+  },
+  "item": {
+    "name": "Ceviche de salmão",
+    "initialPrice": 19.9,
+    "image": "",
+    "description": "salmão temperado com limão, cebola e pimenta",
+    "sections": [
+      {
+        "name": "qual o tamanho?",
+        "description": "escolha 1",
+        "required": true,
+        "options": [
+          {
+            "name": "médio",
+            "price": 22.9,
+            "discountPrice": 19.9,
+            "type": "SINGLE"
+          },
+          {
+            "name": "grande",
+            "price": 28.9,
+            "type": "SINGLE"
+          }
+        ]
+      },
+      {
+        "name": "vai querer bebida?",
+        "description": "escolha quantos quiser",
+        "required": false,
+        "multiSelect": true,
+        "options": [
+          {
+            "name": "coca-cola",
+            "price": 10.0,
+            "type": "MULTIPLE"
+          },
+          {
+            "name": "suco prats laranja",
+            "price": 6.0,
+            "type": "MULTIPLE"
+          },
+          {
+            "name": "água sem gás",
+            "price": 3.0,
+            "type": "MULTIPLE"
+          }
+        ]
+      },
+      {
+        "name": "precisa de talher?",
+        "description": "escolha até 1",
+        "required": false,
+        "singlePriced": true,
+        "price": 1.0,
+        "options": [
+          {
+            "name": "hashi"
+          },
+          {
+            "name": "garfo e faca descartável"
+          }
+        ]
+      },
+      {
+        "name": "mais alguma coisa?",
+        "description": "escolha até 2",
+        "required": false,
+        "multiSelect": true,
+        "options": [
+          {
+            "name": "biscoito da sorte",
+            "price": 2.0,
+            "type": "SINGLE"
+          },
+          {
+            "name": "rolinho primavera",
+            "price": 8.0,
+            "type": "SINGLE"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -2,7 +2,7 @@ import React from "react";
 
 import { Container } from "./styles";
 
-const SectionComponent: React.FC = () => {
+const SectionComponent: React.FC = ({}) => {
   return <Container></Container>;
 };
 

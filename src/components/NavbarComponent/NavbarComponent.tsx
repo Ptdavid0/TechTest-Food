@@ -15,7 +15,8 @@ import { useTicket } from "../../contexts/TicketContext/TicketContext";
 const NavbarComponent: React.FC = () => {
   const { currentTicket } = useTicket();
 
-  const isTicketEmpty = Object.keys(currentTicket).length === 0;
+  const isTicketEmpty =
+    !currentTicket || Object.keys(currentTicket).length === 0;
 
   return (
     <Container id="navbar">

@@ -8,13 +8,16 @@ import {
   InfoContainer,
   SectionName,
   SectionDescription,
+  BottomContainer,
 } from "./styles";
+import OptionComponent from "../OptionComponent/OptionComponent";
 
 interface SectionInterface {
   option: Section;
 }
 
 const SectionComponent: React.FC<SectionInterface> = ({ option }) => {
+  console.log(option);
   return (
     <Container>
       <TopContainer>
@@ -25,8 +28,11 @@ const SectionComponent: React.FC<SectionInterface> = ({ option }) => {
         {option.required && <TagComponent text="obrigatório" variant="dark" />}
       </TopContainer>
 
-      {/* bottom */}
-      <div style={{}}></div>
+      <BottomContainer>
+        {option.options?.map((currentOption) => (
+          <OptionComponent key={currentOption.name} option={currentOption} />
+        ))}
+      </BottomContainer>
     </Container>
   );
 };

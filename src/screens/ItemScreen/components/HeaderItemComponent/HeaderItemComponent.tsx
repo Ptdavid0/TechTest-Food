@@ -4,7 +4,7 @@ import { formatNumberToCurrency } from "../../../../utils/numberUtils";
 import { useTicket } from "../../../../contexts/TicketContext/TicketContext";
 
 import ButtonComponent from "../../../../components/ButtonComponent/ButtonComponent";
-import AddItemComponent from "../AddItemComponent/AddItemComponent";
+import CounterComponent from "../../../../components/CounterComponent/CounterComponent";
 
 // Images are mocked for the sake of the test
 import Logo from "../../../../assets/images/matsuri_logo.png";
@@ -31,7 +31,8 @@ import {
 } from "./styles";
 
 const HeaderItemComponent: React.FC = () => {
-  const { currentTicket, increaseQuantity, currentItem } = useTicket();
+  const { currentTicket, increaseQuantity, decreaseQuantity, currentItem } =
+    useTicket();
 
   return (
     <Container>
@@ -70,7 +71,13 @@ const HeaderItemComponent: React.FC = () => {
               ) : null}
             </LeftQuantityContainer>
             {currentTicket?.quantity ? (
-              <AddItemComponent showTrashIcon size="LARGE" />
+              <CounterComponent
+                showTrashIcon
+                size="LARGE"
+                increaseFunction={increaseQuantity}
+                decreaseFunction={decreaseQuantity}
+                counter={currentTicket?.quantity}
+              />
             ) : (
               <ButtonComponent
                 variant="neutral"

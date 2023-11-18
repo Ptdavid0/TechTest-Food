@@ -22,8 +22,6 @@ const ItemScreen: React.FC = () => {
 
   if (!currentItem) return null;
 
-  console.log(currentItem);
-
   return (
     <Container margintop={navbarHeight}>
       <HeaderItemComponent />

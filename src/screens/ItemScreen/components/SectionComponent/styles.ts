@@ -34,3 +34,10 @@ export const SectionDescription = styled.span`
   font-weight: 700;
   line-height: normal;
 `;
+
+export const BottomContainer = styled.div`
+  display: flex;
+  gap: 60px;
+
+  margin-top: 16px;
+`;

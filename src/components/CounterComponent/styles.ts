@@ -7,13 +7,15 @@ export const Container = styled.div`
   gap: 4px;
 `;
 
-export const QuantityText = styled.span`
+export const QuantityText = styled.span<{
+  size: "MEDIUM" | "LARGE";
+}>`
   color: #393a3c;
   font-family: Nunito;
-  font-size: 16px;
+  font-size: ${({ size }) => (size === "MEDIUM" ? "14px" : "16px")};
   font-style: normal;
   font-weight: 700;
-  line-height: normal;
+  line-height: ${({ size }) => (size === "MEDIUM" ? "19px" : "normal")};
 
   padding: 0 8px;
 `;

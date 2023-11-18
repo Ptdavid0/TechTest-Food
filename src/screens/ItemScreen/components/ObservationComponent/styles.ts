@@ -7,6 +7,7 @@ export const Container = styled.div`
   justify-content: center;
 
   padding: 24px;
+  border-top: 1px solid #eef0f5;
 `;
 
 export const TextArea = styled.textarea`

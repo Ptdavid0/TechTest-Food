@@ -3,14 +3,16 @@ import styled from "styled-components";
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
+
+  border-bottom: 1px solid #eef0f5;
 `;
 
 export const TitleContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-
   gap: 8px;
+
   padding: 24px 84px;
 `;
 
@@ -26,8 +28,8 @@ export const CompanyNameText = styled.span`
 export const ItemContainer = styled.div`
   display: flex;
   justify-content: space-between;
-
   gap: 24px;
+
   padding: 0 132px 24px 132px;
 `;
 
@@ -67,7 +69,6 @@ export const PriceContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-
   gap: 8px;
 `;
 

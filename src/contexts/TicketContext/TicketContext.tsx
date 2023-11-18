@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from "react";
+
+import mockData from "../../mock/data.json";
+
 export interface TicketInterface {
   id: number;
   name: string;
@@ -65,6 +68,17 @@ export const TicketProvider: React.FunctionComponent<{
       });
     }
   }, [currentTicket?.quantity, currentItem]);
+
+  // Set the current ticket to the context - This is for mocked porpuses
+  useEffect(() => {
+    setCurrentTicket({
+      id: 0,
+      name: mockData.item.name,
+      total: 0,
+      quantity: 0,
+    });
+    setCurrentItem(Object(mockData));
+  }, []);
 
   return (
     <TicketContext.Provider

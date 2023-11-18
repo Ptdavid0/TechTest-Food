@@ -16,7 +16,9 @@ const NavbarComponent: React.FC = () => {
   const { currentTicket } = useTicket();
 
   const isTicketEmpty =
-    !currentTicket || Object.keys(currentTicket).length === 0;
+    !currentTicket ||
+    Object.keys(currentTicket).length === 0 ||
+    currentTicket?.quantity === 0;
 
   return (
     <Container id="navbar">

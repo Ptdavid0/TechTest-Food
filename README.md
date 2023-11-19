@@ -10,6 +10,7 @@ Projeto desenvolvido para o desafio da Aiqfome.
 - [React](https://pt-br.reactjs.org/)
 - [React Router](https://reactrouter.com/)
 - [Styled Components](https://styled-components.com/)
+- [React Hook Form](https://react-hook-form.com/)
 
 ## Como rodar
 

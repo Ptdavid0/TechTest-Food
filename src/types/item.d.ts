@@ -20,15 +20,14 @@ declare type Section = {
   name: string;
   description: string;
   required: boolean;
-  options?: Options[] | null;
-  multiSelect?: boolean | null;
-  singlePriced?: boolean | null;
-  price?: number | null;
   type: string;
+  singlePriced?: boolean;
+  isAddition?: boolean;
+  options?: Options[];
 };
 
 declare type Options = {
   name: string;
-  price?: number | null;
-  discountPrice?: number | null;
+  price?: number;
+  discountPrice?: number;
 };

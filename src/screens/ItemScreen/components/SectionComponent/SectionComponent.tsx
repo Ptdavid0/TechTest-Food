@@ -21,6 +21,10 @@ interface SectionInterface {
 const SectionComponent: React.FC<SectionInterface> = ({ option }) => {
   const { register } = useForm();
 
+  const displayPrice = (index: number) =>
+    !option.singlePriced ||
+    !(option.options?.length !== index + 1 && option.singlePriced);
+
   return (
     <Container>
       <TopContainer>
@@ -32,13 +36,15 @@ const SectionComponent: React.FC<SectionInterface> = ({ option }) => {
       </TopContainer>
 
       <BottomContainer>
-        {option.options?.map((currentOption) => (
+        {option.options?.map((currentOption, index) => (
           <OptionComponent
-            key={currentOption.name}
-            option={currentOption}
-            type={option.type}
-            sectionName={option.name}
             register={register}
+            uiType={option.type}
+            option={currentOption}
+            key={currentOption.name}
+            sectionName={option.name}
+            isAddition={option.isAddition}
+            displayPrice={displayPrice(index)}
           />
         ))}
       </BottomContainer>

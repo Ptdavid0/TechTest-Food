@@ -1,7 +1,7 @@
 import React from "react";
+import { FieldValues, UseFormRegister } from "react-hook-form";
 
 import CounterComponent from "../../../../components/CounterComponent/CounterComponent";
-import { FieldValues, UseFormRegister } from "react-hook-form";
 import OptionNameComponent from "../OptionNameComponent/OptionNameComponent";
 import OptionPriceComponent from "../OptionPriceComponent/OptionPriceComponent";
 import { useTicket } from "../../../../contexts/TicketContext/TicketContext";
@@ -9,19 +9,23 @@ import { useTicket } from "../../../../contexts/TicketContext/TicketContext";
 import { Container, LeftContainer } from "./styles";
 
 interface OptionInterface {
+  uiType: string;
   option: Options;
-  type: string;
   sectionName: string;
+  isAddition?: boolean;
+  displayPrice?: boolean | undefined;
   register: UseFormRegister<FieldValues>;
 }
 
 const OptionComponent: React.FC<OptionInterface> = ({
+  uiType,
   option,
-  type,
   sectionName,
+  isAddition = false,
+  displayPrice = false,
   register,
 }) => {
-  const registrationKey = `${type.toLowerCase()} - ${sectionName}`;
+  const registrationKey = `${uiType.toLowerCase()} - ${sectionName}`;
   const { updateSelection, currentTicket } = useTicket();
 
   const handleCounterChange = (newQuantity: number) => {
@@ -79,13 +83,17 @@ const OptionComponent: React.FC<OptionInterface> = ({
   return (
     <Container>
       <LeftContainer>
-        {optionType[type]}
+        {optionType[uiType]}
         <OptionNameComponent
           name={option.name}
           discountPrice={option.discountPrice}
         />
       </LeftContainer>
-      <OptionPriceComponent option={option} />
+      <OptionPriceComponent
+        option={option}
+        displayPrice={displayPrice}
+        isAddition={isAddition}
+      />
     </Container>
   );
 };

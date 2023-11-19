@@ -1,7 +1,3 @@
-interface PriceInterface {
-  option: Options;
-}
-
 import { formatNumberToCurrency } from "../../../../utils/numberUtils";
 
 import {
@@ -11,7 +7,19 @@ import {
   SaleValueText,
 } from "./styles";
 
-const OptionPriceComponent: React.FC<PriceInterface> = ({ option }) => {
+interface PriceInterface {
+  option: Options;
+  displayPrice?: boolean;
+  isAddition?: boolean;
+}
+
+const OptionPriceComponent: React.FC<PriceInterface> = ({
+  option,
+  displayPrice,
+  isAddition,
+}) => {
+  if (!displayPrice) return null;
+
   return (
     <>
       {option.discountPrice ? (
@@ -26,6 +34,7 @@ const OptionPriceComponent: React.FC<PriceInterface> = ({ option }) => {
       ) : (
         <>
           <OptionValueText>
+            {isAddition ? "+" : ""}
             {formatNumberToCurrency(option.price ?? 0)}
           </OptionValueText>
         </>

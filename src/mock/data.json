@@ -14,6 +14,8 @@
         "description": "escolha 1",
         "required": true,
         "type": "RADIO",
+        "singlePriced": false,
+        "isAddition": false,
         "options": [
           {
             "name": "médio",
@@ -31,6 +33,8 @@
         "description": "escolha quantos quiser",
         "required": false,
         "type": "COUNTER",
+        "singlePriced": false,
+        "isAddition": true,
         "options": [
           {
             "name": "coca-cola",
@@ -51,14 +55,16 @@
         "description": "escolha até 1",
         "required": false,
         "singlePriced": true,
-        "price": 1.0,
         "type": "RADIO",
+        "isAddition": true,
         "options": [
           {
-            "name": "hashi"
+            "name": "hashi",
+            "price": 1.0
           },
           {
-            "name": "garfo e faca descartável"
+            "name": "garfo e faca descartável",
+            "price": 1.0
           }
         ]
       },
@@ -66,8 +72,9 @@
         "name": "mais alguma coisa?",
         "description": "escolha até 2",
         "required": false,
-        "multiSelect": true,
         "type": "CHECKBOX",
+        "singlePriced": false,
+        "isAddition": true,
         "options": [
           {
             "name": "biscoito da sorte",

@@ -25,7 +25,7 @@ const PlusButtonComponent: React.FC<PlusButtonComponentProps> = ({
   const LargeSVG = <img src={largePlusActive} alt="large plus" />;
 
   return (
-    <ButtonContainer onClick={increaseFunction}>
+    <ButtonContainer onClick={increaseFunction} disabled={disabled}>
       {size === "MEDIUM" ? MediumSVG : LargeSVG}
     </ButtonContainer>
   );

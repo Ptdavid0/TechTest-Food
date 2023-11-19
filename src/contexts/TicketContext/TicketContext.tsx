@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 
 import mockData from "../../mock/data.json";
-
 export interface TicketInterface {
   id: number;
   name: string;
   total: number;
   quantity: number;
   selections?: any;
+  observation?: string;
 }
 
 export interface TicketContextInterface {
@@ -26,6 +26,7 @@ export interface TicketContextInterface {
     value: number,
     price: any
   ) => void;
+  handleObservation: (observation: string) => void;
 }
 
 export const TicketContext = React.createContext<TicketContextInterface>({
@@ -36,6 +37,7 @@ export const TicketContext = React.createContext<TicketContextInterface>({
   increaseTicketQuantity: () => {},
   decreaseTicketQuantity: () => {},
   updateSelection: () => {},
+  handleObservation: () => {},
 });
 
 export const useTicket = () => React.useContext(TicketContext);
@@ -49,7 +51,7 @@ export const TicketProvider: React.FunctionComponent<{
 
   const [currentItem, setCurrentItem] = useState<FoodItem | null>(null);
 
-  // inscrease ticket quantity
+  // Increase ticket quantity
   const increaseTicketQuantity = () => {
     if (currentTicket) {
       setCurrentTicket({
@@ -59,7 +61,7 @@ export const TicketProvider: React.FunctionComponent<{
     }
   };
 
-  // decrease ticket quantity
+  // Decrease ticket quantity
   const decreaseTicketQuantity = () => {
     if (currentTicket && currentTicket?.quantity > 0) {
       setCurrentTicket({
@@ -69,6 +71,7 @@ export const TicketProvider: React.FunctionComponent<{
     }
   };
 
+  // Update the ticket selection
   const updateSelection = (
     type: "COUNTER" | "RADIO" | "CHECKBOX",
     sectionName: string | number,
@@ -119,34 +122,42 @@ export const TicketProvider: React.FunctionComponent<{
     });
   };
 
+  // Handle ticket observation
+  const handleObservation = (observation: string) => {
+    if (currentTicket) {
+      setCurrentTicket({
+        ...currentTicket,
+        observation: observation,
+      });
+    }
+  };
+
+  // Calculate the total price of the ticket
   const calculateTotal = () => {
     if (!currentTicket || !currentTicket.selections) return 0;
 
     let total = 0;
-    const { selections, quantity } = currentTicket;
 
-    // Calculate the base price from "qual o tamanho?"
-    const sizeSection = selections["qual o tamanho?"];
-    if (sizeSection) {
-      const sizeOption = Object.keys(sizeSection)[0];
-      const sizePrice = sizeSection[sizeOption];
-      total += sizePrice * quantity; // base price multiplied by quantity
-    }
-
-    // Add prices of other selections
-    Object.entries(selections).forEach(([sectionName, options]) => {
-      if (sectionName !== "qual o tamanho?" && options) {
-        Object.values(options).forEach((option) => {
-          if (option.price && option.quantity) {
-            total += option.price * option.quantity;
-          }
-        });
+    for (const [sectionName, options] of Object.entries(
+      currentTicket.selections
+    )) {
+      for (const optionDetails of Object.values(
+        options as Record<string, any>
+      )) {
+        if (sectionName === "qual o tamanho?") {
+          total += (optionDetails as number) * currentTicket.quantity;
+        } else if (typeof optionDetails === "number") {
+          total += optionDetails;
+        } else if (optionDetails.price && optionDetails.quantity) {
+          total += optionDetails.price * optionDetails.quantity;
+        }
       }
-    });
+    }
 
     return total;
   };
 
+  // Update the total price of the ticket
   useEffect(() => {
     if (currentTicket) {
       const newTotal = calculateTotal();
@@ -162,16 +173,6 @@ export const TicketProvider: React.FunctionComponent<{
     }
   }, [currentTicket?.selections, currentTicket?.quantity]);
 
-  // update total price
-  useEffect(() => {
-    if (currentTicket && currentItem) {
-      setCurrentTicket({
-        ...currentTicket,
-        total: (currentItem?.item?.initialPrice || 0) * currentTicket.quantity,
-      });
-    }
-  }, [currentTicket?.quantity, currentItem]);
-
   // Set the current ticket to the context - This is for mocked porpuses
   useEffect(() => {
     setCurrentTicket({
@@ -186,13 +187,14 @@ export const TicketProvider: React.FunctionComponent<{
   return (
     <TicketContext.Provider
       value={{
-        currentTicket,
-        setCurrentTicket,
         currentItem,
+        currentTicket,
         setCurrentItem,
+        updateSelection,
+        setCurrentTicket,
+        handleObservation,
         increaseTicketQuantity,
         decreaseTicketQuantity,
-        updateSelection,
       }}
     >
       {children}

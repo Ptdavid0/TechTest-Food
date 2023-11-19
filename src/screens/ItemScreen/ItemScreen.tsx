@@ -5,6 +5,9 @@ import { useTicket } from "@contexts/TicketContext/TicketContext";
 import ObservationComponent from "./components/ObservationComponent/ObservationComponent";
 import ItemHeaderComponent from "./components/ItemHeaderComponent/ItemHeaderComponent";
 import SectionComponent from "./components/SectionComponent/SectionComponent";
+import DividerComponent from "@components/DividerComponent/DividerComponent";
+
+import theme from "src/theme/theme";
 
 import { Container } from "./styles";
 
@@ -22,11 +25,17 @@ const ItemScreen: React.FC = () => {
 
   if (!currentItem) return null;
 
+  const Divider = () => <DividerComponent color={theme.colors.Neutrals100} />;
+
   return (
     <Container margintop={headerHeight}>
       <ItemHeaderComponent />
+      <Divider />
       {currentItem?.item?.sections?.map((option) => (
-        <SectionComponent key={option.name} option={option} />
+        <>
+          <SectionComponent key={option.name} option={option} />
+          <Divider />
+        </>
       ))}
       <ObservationComponent />
     </Container>

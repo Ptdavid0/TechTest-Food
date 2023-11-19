@@ -5,8 +5,6 @@ import { devices, pxToRem } from "@utils/styles";
 export const Container = styled.section`
   display: flex;
   flex-direction: column;
-
-  border-bottom: 0.0625rem solid ${({ theme }) => theme.colors.Neutrals100};
 `;
 
 export const TitleContainer = styled.div`

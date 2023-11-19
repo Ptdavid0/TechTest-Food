@@ -4,7 +4,6 @@ import { devices, pxToRem } from "@utils/styles";
 
 export const Container = styled.section`
   padding: ${pxToRem(24)} ${pxToRem(132)};
-  border: 0.0625rem solid ${({ theme }) => theme.colors.Neutrals100};
 
   @media screen and (${devices.laptop}) {
     padding: ${pxToRem(24)} ${pxToRem(66)};

@@ -1,22 +1,12 @@
 import React from "react";
 
-import { formatNumberToCurrency } from "../../../../utils/numberUtils";
 import CounterComponent from "../../../../components/CounterComponent/CounterComponent";
 import { FieldValues, UseFormRegister } from "react-hook-form";
+import OptionNameComponent from "../OptionNameComponent/OptionNameComponent";
+import OptionPriceComponent from "../OptionPriceComponent/OptionPriceComponent";
 import { useTicket } from "../../../../contexts/TicketContext/TicketContext";
 
-import CifraIcon from "../../../../assets/icons/cifra.svg";
-
-import {
-  Container,
-  LeftContainer,
-  NameText,
-  OptionValueText,
-  NameContainer,
-  InitialSaleText,
-  SaleContainer,
-  SaleValueText,
-} from "./styles";
+import { Container, LeftContainer } from "./styles";
 
 interface OptionInterface {
   option: Options;
@@ -24,50 +14,6 @@ interface OptionInterface {
   sectionName: string;
   register: UseFormRegister<FieldValues>;
 }
-
-interface PriceInterface {
-  option: Options;
-}
-
-interface OptionNameInterface {
-  name: string;
-  discountPrice?: number | null;
-}
-
-const PriceComponent: React.FC<PriceInterface> = ({ option }) => {
-  return (
-    <>
-      {option.discountPrice ? (
-        <SaleContainer>
-          <InitialSaleText>
-            de {formatNumberToCurrency(option.price ?? 0)} por{" "}
-          </InitialSaleText>
-          <SaleValueText>
-            {formatNumberToCurrency(option.discountPrice ?? 0)}
-          </SaleValueText>
-        </SaleContainer>
-      ) : (
-        <>
-          <OptionValueText>
-            {formatNumberToCurrency(option.price ?? 0)}
-          </OptionValueText>
-        </>
-      )}
-    </>
-  );
-};
-
-const OptionNameComponent: React.FC<OptionNameInterface> = ({
-  name,
-  discountPrice,
-}) => {
-  return (
-    <NameContainer>
-      {discountPrice ? <img src={CifraIcon} alt="Cifra" /> : null}
-      <NameText>{name}</NameText>
-    </NameContainer>
-  );
-};
 
 const OptionComponent: React.FC<OptionInterface> = ({
   option,
@@ -139,7 +85,7 @@ const OptionComponent: React.FC<OptionInterface> = ({
           discountPrice={option.discountPrice}
         />
       </LeftContainer>
-      <PriceComponent option={option} />
+      <OptionPriceComponent option={option} />
     </Container>
   );
 };

@@ -32,10 +32,10 @@ const ItemScreen: React.FC = () => {
       <ItemHeaderComponent />
       <Divider />
       {currentItem?.item?.sections?.map((option) => (
-        <>
+        <React.Fragment key={`${option.name}-Container`}>
           <SectionComponent key={option.name} option={option} />
-          <Divider />
-        </>
+          <Divider key={`${option.name}-Divider`} />
+        </React.Fragment>
       ))}
       <ObservationComponent />
     </Container>

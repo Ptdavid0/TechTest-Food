@@ -118,6 +118,8 @@ const OptionComponent: React.FC<OptionInterface> = ({
         option={option}
         displayPrice={displayPrice}
         isAddition={isAddition}
+        sectionName={sectionName}
+        isCounter={uiType === "COUNTER"}
       />
     </Container>
   );

@@ -28,6 +28,6 @@ declare type Section = {
 
 declare type Options = {
   name: string;
-  price?: number;
+  price: number;
   discountPrice?: number;
 };

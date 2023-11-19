@@ -6,7 +6,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
 
-  border-bottom: 0.063rem solid ${({ theme }) => theme.colors.Neutrals100};
+  border-bottom: 0.0625rem solid ${({ theme }) => theme.colors.Neutrals100};
 `;
 
 export const TitleContainer = styled.div`
@@ -23,11 +23,10 @@ export const TitleContainer = styled.div`
 `;
 
 export const CompanyNameText = styled.span`
-  color: #202326;
-  font-family: Nunito;
-  font-size: ${pxToRem(24)};
-  font-style: normal;
-  font-weight: 700;
+  color: ${({ theme }) => theme.colors.Neutrals900};
+  font-family: ${({ theme }) => theme.fonts.fontFamily};
+  font-size: ${({ theme }) => theme.fonts.styles[24]};
+  font-weight: ${({ theme }) => theme.fonts.weight.bold};
   line-height: normal;
 `;
 
@@ -75,19 +74,17 @@ export const TopInfoContainer = styled.div`
 
 export const ItemNameText = styled.span`
   color: ${({ theme }) => theme.colors.Neutrals700};
-  font-family: Nunito;
-  font-size: ${pxToRem(24)};
-  font-style: normal;
-  font-weight: 700;
+  font-family: ${({ theme }) => theme.fonts.fontFamily};
+  font-size: ${({ theme }) => theme.fonts.styles[24]};
+  font-weight: ${({ theme }) => theme.fonts.weight.bold};
   line-height: normal;
 `;
 
 export const ItemDescriptionText = styled.span`
   color: ${({ theme }) => theme.colors.Neutrals500};
-  font-family: Nunito;
-  font-size: 1rem;
-  font-style: normal;
-  font-weight: 600;
+  font-family: ${({ theme }) => theme.fonts.fontFamily};
+  font-size: ${({ theme }) => theme.fonts.styles[16]};
+  font-weight: ${({ theme }) => theme.fonts.weight.semibold};
   line-height: normal;
 `;
 
@@ -100,18 +97,16 @@ export const PriceContainer = styled.div`
 
 export const ItemPriceDescriptionText = styled.span`
   color: ${({ theme }) => theme.colors.Neutrals500};
-  font-family: Nunito;
-  font-size: 1rem;
-  font-style: normal;
-  font-weight: 700;
+  font-family: ${({ theme }) => theme.fonts.fontFamily};
+  font-size: ${({ theme }) => theme.fonts.styles[16]};
+  font-weight: ${({ theme }) => theme.fonts.weight.bold};
   line-height: normal;
 `;
 
 export const ItemPriceText = styled.span`
   color: ${({ theme }) => theme.colors.Purple500};
-  font-family: Nunito;
-  font-size: ${pxToRem(16)};
-  font-style: normal;
+  font-family: ${({ theme }) => theme.fonts.fontFamily};
+  font-size: ${({ theme }) => theme.fonts.styles[16]};
   font-weight: 800;
   line-height: normal;
 `;
@@ -138,10 +133,9 @@ export const LeftQuantityContainer = styled.div`
 
 export const QuantityTitle = styled.span`
   color: ${({ theme }) => theme.colors.Neutrals700};
-  font-family: Nunito;
-  font-size: 1rem;
-  font-style: normal;
-  font-weight: 700;
+  font-family: ${({ theme }) => theme.fonts.fontFamily};
+  font-size: ${({ theme }) => theme.fonts.styles[16]};
+  font-weight: ${({ theme }) => theme.fonts.weight.bold};
   line-height: normal;
 `;
 
@@ -154,18 +148,16 @@ export const TotalContainer = styled.div`
 
 export const TotalDescriptionText = styled.span`
   color: ${({ theme }) => theme.colors.Neutrals500};
-  font-family: Nunito;
-  font-size: ${pxToRem(14)};
-  font-style: normal;
-  font-weight: 600;
+  font-family: ${({ theme }) => theme.fonts.fontFamily};
+  font-size: ${({ theme }) => theme.fonts.styles[14]};
+  font-weight: ${({ theme }) => theme.fonts.weight.semibold};
   line-height: ${pxToRem(19)};
 `;
 
 export const TotalPriceText = styled.span`
   color: ${({ theme }) => theme.colors.Neutrals700};
-  font-family: Nunito;
-  font-size: ${pxToRem(14)};
-  font-style: normal;
-  font-weight: 700;
+  font-family: ${({ theme }) => theme.fonts.fontFamily};
+  font-size: ${({ theme }) => theme.fonts.styles[14]};
+  font-weight: ${({ theme }) => theme.fonts.weight.bold};
   line-height: ${pxToRem(19)};
 `;

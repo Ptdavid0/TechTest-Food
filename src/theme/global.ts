@@ -40,7 +40,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
 	body {
-  	font-family: 'Nunito';
+  	font-family: 'Nunito Sans';
   	margin: 0;
 	}
 `;

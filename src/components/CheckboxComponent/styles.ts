@@ -20,11 +20,11 @@ export const CheckboxInput = styled.input`
 `;
 
 export const StyledCheckboxSVGClicked = styled(checkboxSVGClicked)`
-  width: 20px;
-  height: 20px;
+  width: ${({ theme }) => theme.fonts.styles[20]};
+  height: ${({ theme }) => theme.fonts.styles[20]};
 `;
 
 export const StyledCheckboxSVGNotClicked = styled(checkboxSVGNotClicked)`
-  width: 20px;
-  height: 20px;
+  width: ${({ theme }) => theme.fonts.styles[20]};
+  height: ${({ theme }) => theme.fonts.styles[20]};
 `;

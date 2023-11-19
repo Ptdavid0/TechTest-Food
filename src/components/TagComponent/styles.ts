@@ -19,10 +19,9 @@ export const Container = styled.div<{
   padding: 0.25rem 0.5rem;
   background-color: ${({ variant }) => backgroundVariant[variant]};
 
-  font-family: Nunito;
-  font-size: 0.75rem;
-  font-style: normal;
-  font-weight: 700;
+  font-family: ${({ theme }) => theme.fonts.fontFamily};
+  font-size: ${theme.fonts.styles[12]};
+  font-weight: ${theme.fonts.weight.bold};
   line-height: normal;
   color: ${({ variant }) => colorVariant[variant]};
 `;

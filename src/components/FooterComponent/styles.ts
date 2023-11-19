@@ -15,25 +15,24 @@ export const Container = styled.footer`
 `;
 
 export const CopyrigthText = styled.span`
-  font-size: 1.125rem;
-  font-style: normal;
-  font-weight: 700;
+  font-size: ${({ theme }) => theme.fonts.styles[18]};
+  font-weight: ${({ theme }) => theme.fonts.weight.bold};
   line-height: normal;
   color: ${({ theme }) => theme.colors.Purple700};
 
   @media screen and (${devices.mobileL}) {
-    font-size: 0.875rem;
+    font-size: ${({ theme }) => theme.fonts.styles[14]};
   }
 
   @media screen and (${devices.mobileM}) {
-    font-size: 0.75rem;
+    font-size: ${({ theme }) => theme.fonts.styles[12]};
   }
 `;
 
 export const MessageFromCompanyText = styled.span`
   font-size: 0.875rem;
-  font-style: normal;
-  font-weight: 700;
+
+  font-weight: ${({ theme }) => theme.fonts.weight.bold};
   line-height: 1.188rem;
   color: ${({ theme }) => theme.colors.Purple700};
 

@@ -20,11 +20,11 @@ export const RadioInput = styled.input`
 `;
 
 export const StyledRadioSVGClicked = styled(RadioSVGClicked)`
-  width: 20px;
-  height: 20px;
+  width: 1.25rem;
+  height: 1.25rem;
 `;
 
 export const StyledRadioSVGNotClicked = styled(RadioSVGNotClicked)`
-  width: 20px;
-  height: 20px;
+  width: 1.25rem;
+  height: 1.25rem;
 `;

@@ -6,7 +6,7 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
 
-  border: 0.063rem solid ${({ theme }) => theme.colors.Neutrals200};
+  border: 0.0625rem solid ${({ theme }) => theme.colors.Neutrals200};
   border-radius: ${pxToRem(8)};
   width: ${pxToRem(340)};
   background-color: ${({ theme }) => theme.colors.Neutrals0};
@@ -29,10 +29,9 @@ export const StyledInput = styled.input`
   width: 90%;
 
   color: ${({ theme }) => theme.colors.Neutrals500};
-  font-family: Nunito;
-  font-size: ${pxToRem(14)};
-  font-style: normal;
-  font-weight: 600;
+  font-family: ${({ theme }) => theme.fonts.fontFamily};
+  font-size: ${({ theme }) => theme.fonts.styles[14]};
+  font-weight: ${({ theme }) => theme.fonts.weight.semibold};
   line-height: ${pxToRem(19)};
 
   opacity: 0.7;

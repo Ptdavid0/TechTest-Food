@@ -4,7 +4,7 @@ import { devices, pxToRem } from "@utils/styles";
 
 export const Container = styled.div`
   padding: ${pxToRem(24)} ${pxToRem(132)};
-  border: 0.063rem solid ${({ theme }) => theme.colors.Neutrals100};
+  border: 0.0625rem solid ${({ theme }) => theme.colors.Neutrals100};
 
   @media screen and (${devices.laptop}) {
     padding: ${pxToRem(24)} ${pxToRem(66)};
@@ -25,19 +25,17 @@ export const InfoContainer = styled.div`
 
 export const SectionName = styled.span`
   color: ${({ theme }) => theme.colors.Neutrals900};
-  font-family: Nunito;
-  font-size: 1rem;
-  font-style: normal;
-  font-weight: 700;
+  font-family: ${({ theme }) => theme.fonts.fontFamily};
+  font-size: ${({ theme }) => theme.fonts.styles[16]};
+  font-weight: ${({ theme }) => theme.fonts.weight.bold};
   line-height: normal;
 `;
 
 export const SectionDescription = styled.span`
   color: ${({ theme }) => theme.colors.Neutrals500};
-  font-family: Nunito;
-  font-size: ${pxToRem(12)};
-  font-style: normal;
-  font-weight: 700;
+  font-family: ${({ theme }) => theme.fonts.fontFamily};
+  font-size: ${({ theme }) => theme.fonts.styles[12]};
+  font-weight: ${({ theme }) => theme.fonts.weight.bold};
   line-height: normal;
 `;
 

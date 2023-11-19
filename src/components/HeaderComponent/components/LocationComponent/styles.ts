@@ -21,18 +21,16 @@ export const InfoContainer = styled.div`
 
 export const DeliveryText = styled.span`
   color: ${({ theme }) => theme.colors.Purple50};
-  font-size: ${pxToRem(14)};
-  font-style: normal;
-  font-weight: 700;
+  font-size: ${({ theme }) => theme.fonts.styles[14]};
+  font-weight: ${({ theme }) => theme.fonts.weight.bold};
   line-height: ${pxToRem(19)};
 `;
 
 export const AddressButton = styled.button`
   color: ${({ theme }) => theme.colors.Neutrals0};
-  font-family: Nunito;
-  font-size: ${pxToRem(18)};
-  font-style: normal;
-  font-weight: 700;
+  font-family: ${({ theme }) => theme.fonts.fontFamily};
+  font-size: ${({ theme }) => theme.fonts.styles[18]};
+  font-weight: ${({ theme }) => theme.fonts.weight.bold};
   line-height: normal;
 
   background-color: transparent;

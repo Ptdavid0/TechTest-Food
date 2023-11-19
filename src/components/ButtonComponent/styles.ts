@@ -32,10 +32,9 @@ export const Container = styled.button<{
   outline: none;
   cursor: pointer;
 
-  font-family: Nunito;
-  font-size: 1rem;
-  font-style: normal;
-  font-weight: 800;
+  font-family: ${({ theme }) => theme.fonts.fontFamily};
+  font-size: ${theme.fonts.styles[16]};
+  font-weight: ${theme.fonts.weight.bold};
   line-height: normal;
   color: ${({ variant }) => colorVariant[variant]};
 `;

@@ -4,9 +4,8 @@ import { devices, pxToRem } from "@utils/styles";
 
 export const NameText = styled.span`
   color: ${({ theme }) => theme.colors.Neutrals500};
-  font-family: Nunito;
-  font-size: ${pxToRem(14)};
-  font-style: normal;
+  font-family: ${({ theme }) => theme.fonts.fontFamily};
+  font-size: ${({ theme }) => theme.fonts.styles[14]};
   font-weight: 400;
   line-height: ${pxToRem(19)};
 `;

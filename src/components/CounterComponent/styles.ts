@@ -12,10 +12,10 @@ export const QuantityText = styled.span<{
   size: "MEDIUM" | "LARGE";
 }>`
   color: ${({ theme }) => theme.colors.Neutrals900};
-  font-family: Nunito;
-  font-size: ${({ size }) => (size === "MEDIUM" ? "0.875rem" : "1rem")};
-  font-style: normal;
-  font-weight: 700;
+  font-family: ${({ theme }) => theme.fonts.fontFamily};
+  font-size: ${({ size, theme }) =>
+    size === "MEDIUM" ? theme.fonts.styles[14] : theme.fonts.styles[16]};
+  font-weight: ${({ theme }) => theme.fonts.weight.bold};
   line-height: ${({ size }) => (size === "MEDIUM" ? "1.188rem" : "normal")};
 
   padding: 0 0.5rem;

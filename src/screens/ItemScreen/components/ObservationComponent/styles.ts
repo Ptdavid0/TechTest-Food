@@ -9,19 +9,18 @@ export const Container = styled.div`
   justify-content: center;
 
   padding: ${pxToRem(24)};
-  border-top: 0.063rem solid ${({ theme }) => theme.colors.Neutrals100};
+  border-top: 0.0625rem solid ${({ theme }) => theme.colors.Neutrals100};
 `;
 
 export const TextArea = styled.textarea`
   width: 40%;
-  border: 0.063rem solid ${({ theme }) => theme.colors.Neutrals200};
+  border: 0.0625rem solid ${({ theme }) => theme.colors.Neutrals200};
   border-radius: 0.25rem;
   padding: ${pxToRem(12)};
 
-  font-family: Nunito;
-  font-size: ${pxToRem(14)};
-  font-style: normal;
-  font-weight: 600;
+  font-family: ${({ theme }) => theme.fonts.fontFamily};
+  font-size: ${({ theme }) => theme.fonts.styles[14]};
+  font-weight: ${({ theme }) => theme.fonts.weight.semibold};
   line-height: ${pxToRem(19)};
 
   @media screen and (${devices.laptop}) {

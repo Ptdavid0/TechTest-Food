@@ -6,6 +6,7 @@ Projeto desenvolvido para o desafio da Aiqfome.
 
 ## Tecnologias
 
+- [Vite](https://vitejs.dev/)
 - [React](https://pt-br.reactjs.org/)
 - [React Router](https://reactrouter.com/)
 - [Styled Components](https://styled-components.com/)

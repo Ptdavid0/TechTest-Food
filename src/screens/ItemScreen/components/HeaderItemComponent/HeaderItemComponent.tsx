@@ -31,8 +31,12 @@ import {
 } from "./styles";
 
 const HeaderItemComponent: React.FC = () => {
-  const { currentTicket, increaseQuantity, decreaseQuantity, currentItem } =
-    useTicket();
+  const {
+    currentTicket,
+    increaseTicketQuantity,
+    decreaseTicketQuantity,
+    currentItem,
+  } = useTicket();
 
   return (
     <Container>
@@ -74,15 +78,15 @@ const HeaderItemComponent: React.FC = () => {
               <CounterComponent
                 showTrashIcon
                 size="LARGE"
-                increaseFunction={increaseQuantity}
-                decreaseFunction={decreaseQuantity}
+                increaseFunction={increaseTicketQuantity}
+                decreaseFunction={decreaseTicketQuantity}
                 counter={currentTicket?.quantity}
               />
             ) : (
               <ButtonComponent
                 variant="neutral"
                 text="adicionar"
-                onClick={increaseQuantity}
+                onClick={increaseTicketQuantity}
               />
             )}
           </QuantityContainer>

@@ -10,6 +10,11 @@ export const Container = styled.div`
   padding: 4px 0;
 `;
 
+export const LeftContainer = styled.div`
+  display: flex;
+  gap: 8px;
+`;
+
 // Price Container
 
 export const OptionValueText = styled.span`

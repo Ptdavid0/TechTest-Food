@@ -1,6 +1,9 @@
 import React from "react";
 
 import TagComponent from "../../../../components/TagComponent/TagComponent";
+import OptionComponent from "../OptionComponent/OptionComponent";
+
+import { useForm } from "react-hook-form";
 
 import {
   Container,
@@ -10,14 +13,14 @@ import {
   SectionDescription,
   BottomContainer,
 } from "./styles";
-import OptionComponent from "../OptionComponent/OptionComponent";
 
 interface SectionInterface {
   option: Section;
 }
 
 const SectionComponent: React.FC<SectionInterface> = ({ option }) => {
-  console.log(option);
+  const { register } = useForm();
+
   return (
     <Container>
       <TopContainer>
@@ -30,7 +33,13 @@ const SectionComponent: React.FC<SectionInterface> = ({ option }) => {
 
       <BottomContainer>
         {option.options?.map((currentOption) => (
-          <OptionComponent key={currentOption.name} option={currentOption} />
+          <OptionComponent
+            key={currentOption.name}
+            option={currentOption}
+            type={option.type}
+            sectionName={option.name}
+            register={register}
+          />
         ))}
       </BottomContainer>
     </Container>

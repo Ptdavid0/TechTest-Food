@@ -24,11 +24,11 @@ declare type Section = {
   multiSelect?: boolean | null;
   singlePriced?: boolean | null;
   price?: number | null;
+  type: string;
 };
 
 declare type Options = {
   name: string;
   price?: number | null;
   discountPrice?: number | null;
-  type?: string | null;
 };

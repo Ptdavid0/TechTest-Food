@@ -31,10 +31,10 @@ const ItemScreen: React.FC = () => {
     <Container margintop={headerHeight}>
       <ItemHeaderComponent />
       <Divider />
-      {currentItem?.item?.sections?.map((option) => (
-        <React.Fragment key={`${option.name}-Container`}>
-          <SectionComponent key={option.name} option={option} />
-          <Divider key={`${option.name}-Divider`} />
+      {currentItem?.item?.sections?.map((section) => (
+        <React.Fragment key={`${section.name}-Container`}>
+          <SectionComponent key={section.name} section={section} />
+          <Divider key={`${section.name}-Divider`} />
         </React.Fragment>
       ))}
       <ObservationComponent />

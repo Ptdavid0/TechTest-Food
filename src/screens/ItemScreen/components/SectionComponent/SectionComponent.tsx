@@ -13,15 +13,15 @@ import {
 } from "./styles";
 
 interface SectionInterface {
-  option: Section;
+  section: Section;
 }
 
-const SectionComponent: React.FC<SectionInterface> = ({ option }) => {
+const SectionComponent: React.FC<SectionInterface> = ({ section }) => {
   const [selections, setSelections] = React.useState({});
 
   const handleSelectionChange = (
-    sectionName: string | number,
-    value: any,
+    sectionName: string,
+    value: string,
     isCheckbox = false
   ) => {
     setSelections((prevSelections: { [key: string]: any }) => {
@@ -40,27 +40,27 @@ const SectionComponent: React.FC<SectionInterface> = ({ option }) => {
   };
 
   const displayPrice = (index: number) =>
-    !option.singlePriced ||
-    !(option.options?.length !== index + 1 && option.singlePriced);
+    !section.singlePriced ||
+    !(section.options?.length !== index + 1 && section.singlePriced);
 
   return (
     <Container>
       <TopContainer>
         <InfoContainer>
-          <SectionName>{option.name}</SectionName>
-          <SectionDescription>{option.description}</SectionDescription>
+          <SectionName>{section.name}</SectionName>
+          <SectionDescription>{section.description}</SectionDescription>
         </InfoContainer>
-        {option.required && <TagComponent text="obrigatório" variant="dark" />}
+        {section.required && <TagComponent text="obrigatório" variant="dark" />}
       </TopContainer>
 
       <BottomContainer>
-        {option.options?.map((currentOption, index) => (
+        {section.options?.map((currentOption, index) => (
           <OptionComponent
-            uiType={option.type}
+            uiType={section.type}
             option={currentOption}
             key={currentOption.name}
-            sectionName={option.name}
-            isAddition={option.isAddition}
+            sectionName={section.name}
+            isAddition={section.isAddition}
             displayPrice={displayPrice(index)}
             onSelectionChange={handleSelectionChange}
             selections={selections}

@@ -6,17 +6,16 @@ export interface TicketInterface {
   name: string;
   total: number;
   quantity: number;
-  selections?: any;
+  selections?: Record<string, any>;
   observation?: string;
 }
 
 export interface TicketContextInterface {
+  currentItem: FoodItem | null;
   currentTicket: TicketInterface | null;
   setCurrentTicket: React.Dispatch<
     React.SetStateAction<TicketInterface | null>
   >;
-  currentItem: FoodItem | null;
-  setCurrentItem: React.Dispatch<React.SetStateAction<FoodItem | null>>;
   increaseTicketQuantity: () => void;
   decreaseTicketQuantity: () => void;
   updateSelection: (
@@ -24,20 +23,21 @@ export interface TicketContextInterface {
     sectionName: string | number,
     optionName: string | number,
     value: number,
-    price: any
+    price: number
   ) => void;
   handleObservation: (observation: string) => void;
+  setCurrentItem: React.Dispatch<React.SetStateAction<FoodItem | null>>;
 }
 
 export const TicketContext = React.createContext<TicketContextInterface>({
-  currentTicket: null,
-  setCurrentTicket: () => {},
   currentItem: null,
+  currentTicket: null,
   setCurrentItem: () => {},
+  updateSelection: () => {},
+  setCurrentTicket: () => {},
+  handleObservation: () => {},
   increaseTicketQuantity: () => {},
   decreaseTicketQuantity: () => {},
-  updateSelection: () => {},
-  handleObservation: () => {},
 });
 
 export const useTicket = () => React.useContext(TicketContext);
@@ -45,11 +45,10 @@ export const useTicket = () => React.useContext(TicketContext);
 export const TicketProvider: React.FunctionComponent<{
   children: React.ReactNode;
 }> = ({ children }) => {
+  const [currentItem, setCurrentItem] = useState<FoodItem | null>(null);
   const [currentTicket, setCurrentTicket] = useState<TicketInterface | null>(
     null
   );
-
-  const [currentItem, setCurrentItem] = useState<FoodItem | null>(null);
 
   // Increase ticket quantity
   const increaseTicketQuantity = () => {

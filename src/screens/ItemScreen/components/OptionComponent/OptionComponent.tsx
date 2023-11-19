@@ -6,21 +6,27 @@ import CounterComponent from "@components/CounterComponent/CounterComponent";
 import OptionNameComponent from "../OptionNameComponent/OptionNameComponent";
 import OptionPriceComponent from "../OptionPriceComponent/OptionPriceComponent";
 import RadioButtonComponent from "@components/RadioButtonComponent/RadioButtonComponent";
+import CheckboxComponent from "@components/CheckboxComponent/CheckboxComponent";
 
 import { Container, LeftContainer } from "./styles";
-import CheckboxComponent from "@components/CheckboxComponent/CheckboxComponent";
 interface OptionInterface {
   uiType: string;
   option: Options;
   sectionName: string;
   isAddition?: boolean;
-  displayPrice?: boolean | undefined;
+  displayPrice: boolean;
   onSelectionChange: (
     sectionOptionKey: string,
-    value: any,
+    value: string,
     isCheckbox?: boolean
   ) => void;
-  selections: { [key: string]: any };
+  selections: { [key: string]: string[] | string };
+}
+
+interface OptionType {
+  COUNTER: JSX.Element;
+  RADIO: JSX.Element;
+  CHECKBOX: JSX.Element;
 }
 
 const OptionComponent: React.FC<OptionInterface> = ({
@@ -41,7 +47,6 @@ const OptionComponent: React.FC<OptionInterface> = ({
       const key = `${sectionName}-${option.name}`;
       return selections[key]?.includes(option.name) ?? false;
     } else {
-      // For radio buttons, the section name is sufficient to identify the selected option
       return selections[sectionName] === option.name;
     }
   };
@@ -63,10 +68,8 @@ const OptionComponent: React.FC<OptionInterface> = ({
     const optionType = event.target.type.toUpperCase();
 
     if (optionType === "RADIO") {
-      // Use 'sectionName' for radio buttons
       onSelectionChange(sectionName, option.name);
     } else if (optionType === "CHECKBOX") {
-      // Use 'sectionOptionKey' for checkboxes
       onSelectionChange(sectionOptionKey, option.name, true);
     }
 
@@ -79,7 +82,7 @@ const OptionComponent: React.FC<OptionInterface> = ({
     );
   };
 
-  const optionType: any = {
+  const optionType: OptionType = {
     COUNTER: (
       <CounterComponent
         counter={
@@ -108,7 +111,7 @@ const OptionComponent: React.FC<OptionInterface> = ({
   return (
     <Container>
       <LeftContainer>
-        {optionType[uiType]}
+        {optionType[uiType as keyof OptionType]}
         <OptionNameComponent
           name={option.name}
           discountPrice={option.discountPrice}

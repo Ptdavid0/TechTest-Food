@@ -13,7 +13,7 @@ declare type Item = {
   initialPrice: number;
   image: string;
   description: string;
-  sections?: Section[] | null;
+  sections?: Section[];
 };
 
 declare type Section = {

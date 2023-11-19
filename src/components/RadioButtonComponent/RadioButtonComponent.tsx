@@ -1,7 +1,4 @@
 import React from "react";
-
-import { useForm } from "react-hook-form";
-
 import {
   RadioInput,
   RadioWrapper,
@@ -12,32 +9,23 @@ import {
 interface RadioButtonComponentInterface {
   value: string;
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  register: any;
-  registrationKey: string;
+  checked: boolean;
 }
 
 const RadioButtonComponent: React.FC<RadioButtonComponentInterface> = ({
-  register,
-  registrationKey,
   value,
   onChange,
+  checked,
 }) => {
-  const { watch } = useForm();
-  const watchedValue = watch(registrationKey);
-  console.log("watchedValue", watchedValue);
   return (
     <RadioWrapper>
       <RadioInput
         type="radio"
-        {...register(registrationKey)}
         value={value}
         onChange={onChange}
+        checked={checked}
       />
-      {watchedValue === value ? (
-        <StyledRadioSVGClicked />
-      ) : (
-        <StyledRadioSVGNotClicked />
-      )}
+      {checked ? <StyledRadioSVGClicked /> : <StyledRadioSVGNotClicked />}
     </RadioWrapper>
   );
 };

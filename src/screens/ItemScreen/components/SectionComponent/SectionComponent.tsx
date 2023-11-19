@@ -19,7 +19,11 @@ interface SectionInterface {
 }
 
 const SectionComponent: React.FC<SectionInterface> = ({ option }) => {
-  const { register } = useForm();
+  const [selectedOption, setSelectedOption] = React.useState(null);
+
+  const handleRadioChange = (value: any) => {
+    setSelectedOption(value);
+  };
 
   const displayPrice = (index: number) =>
     !option.singlePriced ||
@@ -38,13 +42,14 @@ const SectionComponent: React.FC<SectionInterface> = ({ option }) => {
       <BottomContainer>
         {option.options?.map((currentOption, index) => (
           <OptionComponent
-            register={register}
             uiType={option.type}
             option={currentOption}
             key={currentOption.name}
             sectionName={option.name}
             isAddition={option.isAddition}
             displayPrice={displayPrice(index)}
+            selectedOption={selectedOption}
+            onRadioChange={handleRadioChange}
           />
         ))}
       </BottomContainer>

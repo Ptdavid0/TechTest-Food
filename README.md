@@ -9,7 +9,6 @@ Projeto desenvolvido para o desafio da Aiqfome.
 - [Vite](https://vitejs.dev/)
 - [React](https://pt-br.reactjs.org/)
 - [React Router](https://reactrouter.com/)
-- [React Hook Form](https://react-hook-form.com/)
 - [Vite Plugin SVGR](https://github.com/pd4d10/vite-plugin-svgr)
 - [Styled Components](https://styled-components.com/)
 

@@ -1,6 +1,5 @@
 import React from "react";
 
-import { FieldValues, UseFormRegister } from "react-hook-form";
 import { useTicket } from "@contexts/TicketContext/TicketContext";
 
 import CounterComponent from "@components/CounterComponent/CounterComponent";
@@ -15,7 +14,8 @@ interface OptionInterface {
   sectionName: string;
   isAddition?: boolean;
   displayPrice?: boolean | undefined;
-  register: UseFormRegister<FieldValues>;
+  selectedOption?: any;
+  onRadioChange: (value: any) => void;
 }
 
 const OptionComponent: React.FC<OptionInterface> = ({
@@ -24,9 +24,9 @@ const OptionComponent: React.FC<OptionInterface> = ({
   sectionName,
   isAddition = false,
   displayPrice = false,
-  register,
+  onRadioChange,
+  selectedOption,
 }) => {
-  const registrationKey = `${uiType.toLowerCase()} - ${sectionName}`;
   const { updateSelection, currentTicket } = useTicket();
 
   const handleCounterChange = (newQuantity: number) => {
@@ -44,6 +44,8 @@ const OptionComponent: React.FC<OptionInterface> = ({
   }) => {
     const isChecked = event.target.checked;
     const optionType = event.target.type.toUpperCase();
+    if (optionType === "RADIO") onRadioChange(option.name);
+
     updateSelection(
       optionType,
       sectionName,
@@ -66,15 +68,13 @@ const OptionComponent: React.FC<OptionInterface> = ({
     RADIO: (
       <RadioButtonComponent
         value={option.name}
-        register={register}
-        registrationKey={registrationKey}
         onChange={handleRadioCheckboxChange}
+        checked={selectedOption === option.name}
       />
     ),
     CHECKBOX: (
       <input
         type="checkbox"
-        {...register(registrationKey)}
         value={option.name}
         onChange={handleRadioCheckboxChange}
       />

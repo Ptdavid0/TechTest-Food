@@ -1,5 +1,5 @@
 import FooterComponent from "./components/FooterComponent/FooterComponent";
-import NavbarComponent from "./components/NavbarComponent/NavbarComponent";
+import NavbarComponent from "./components/HeaderComponent/HeaderComponent";
 import { TicketProvider } from "./contexts/TicketContext/TicketContext";
 import Router from "./routes/Router";
 import { ThemeProvider } from "styled-components";

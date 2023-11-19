@@ -9,21 +9,21 @@ import SectionComponent from "./components/SectionComponent/SectionComponent";
 import { Container } from "./styles";
 
 const ItemScreen: React.FC = () => {
-  const [navbarHeight, setNavbarHeight] = useState<number | null>(null);
+  const [headerHeight, setHeaderHeight] = useState<number | null>(null);
 
   const { currentItem } = useTicket();
 
-  // Get the navbar height and set it to the container
+  // Get the header height and set it to the container
   useLayoutEffect(() => {
-    const navbarElement = document.getElementById("navbar");
+    const headerElement = document.getElementById("header");
 
-    if (navbarElement) setNavbarHeight(navbarElement.offsetHeight);
+    if (headerElement) setHeaderHeight(headerElement.offsetHeight);
   }, []);
 
   if (!currentItem) return null;
 
   return (
-    <Container margintop={navbarHeight}>
+    <Container margintop={headerHeight}>
       <HeaderItemComponent />
       {currentItem?.item?.sections?.map((option) => (
         <SectionComponent key={option.name} option={option} />

@@ -1,5 +1,7 @@
 import React from "react";
 
+import { useTicket } from "@contexts/TicketContext/TicketContext";
+
 import CompanyLogo from "@assets/icons/aiq_branding.svg";
 import TicketIcon from "@assets/icons/ticket.svg";
 import UserIcon from "@assets/icons/user.svg";
@@ -10,9 +12,7 @@ import ButtonComponent from "@components/ButtonComponent/ButtonComponent";
 
 import { Container, ButtonsContainer } from "./styles";
 
-import { useTicket } from "@contexts/TicketContext/TicketContext";
-
-const NavbarComponent: React.FC = () => {
+const HeaderComponent: React.FC = () => {
   const { currentTicket } = useTicket();
 
   const isTicketEmpty =
@@ -21,7 +21,7 @@ const NavbarComponent: React.FC = () => {
     currentTicket?.quantity === 0;
 
   return (
-    <Container id="navbar">
+    <Container id="header">
       <img src={CompanyLogo} alt="Aiqfome Logo" />
       <LocationComponent />
       <SearchComponent />
@@ -39,4 +39,4 @@ const NavbarComponent: React.FC = () => {
   );
 };
 
-export default NavbarComponent;
+export default HeaderComponent;

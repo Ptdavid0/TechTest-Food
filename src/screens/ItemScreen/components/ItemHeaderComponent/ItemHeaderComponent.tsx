@@ -30,7 +30,7 @@ import {
   LeftQuantityContainer,
 } from "./styles";
 
-const HeaderItemComponent: React.FC = () => {
+const ItemHeaderComponent: React.FC = () => {
   const {
     currentTicket,
     increaseTicketQuantity,
@@ -98,4 +98,4 @@ const HeaderItemComponent: React.FC = () => {
   );
 };
 
-export default HeaderItemComponent;
+export default ItemHeaderComponent;

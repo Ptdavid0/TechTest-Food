@@ -16,8 +16,19 @@ export const Container = styled.header`
   right: 0;
   z-index: 1;
 
+  > img {
+    @media screen and (${devices.mobileL}) {
+      width: ${pxToRem(50)};
+      height: ${pxToRem(50)};
+    }
+  }
+
   @media screen and (${devices.laptop}) {
     padding: ${pxToRem(12)} ${pxToRem(42)};
+  }
+
+  @media screen and (${devices.mobileL}) {
+    padding: ${pxToRem(6)} ${pxToRem(42)};
   }
 `;
 

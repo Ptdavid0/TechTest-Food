@@ -122,8 +122,6 @@ export const TicketProvider: React.FunctionComponent<{
     });
   };
 
-  console.log(currentTicket);
-
   // Handle ticket observation
   const handleObservation = (observation: string) => {
     if (currentTicket) {

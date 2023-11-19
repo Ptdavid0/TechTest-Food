@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 import { devices, pxToRem } from "@utils/styles";
 
-export const Container = styled.div`
+export const Container = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;

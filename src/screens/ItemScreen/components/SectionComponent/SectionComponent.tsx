@@ -3,8 +3,6 @@ import React from "react";
 import TagComponent from "@components/TagComponent/TagComponent";
 import OptionComponent from "../OptionComponent/OptionComponent";
 
-import { useForm } from "react-hook-form";
-
 import {
   Container,
   TopContainer,
@@ -28,7 +26,6 @@ const SectionComponent: React.FC<SectionInterface> = ({ option }) => {
   ) => {
     setSelections((prevSelections: { [key: string]: any }) => {
       if (isCheckbox) {
-        // For checkboxes, toggle the value in the array
         const currentSelections = prevSelections[sectionName] || [];
         return {
           ...prevSelections,
@@ -37,7 +34,6 @@ const SectionComponent: React.FC<SectionInterface> = ({ option }) => {
             : [...currentSelections, value],
         };
       } else {
-        // For radio buttons, set the value directly
         return { ...prevSelections, [sectionName]: value };
       }
     });

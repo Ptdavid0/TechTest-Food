@@ -3,7 +3,7 @@ import React, { useLayoutEffect, useState } from "react";
 import { useTicket } from "@contexts/TicketContext/TicketContext";
 
 import ObservationComponent from "./components/ObservationComponent/ObservationComponent";
-import HeaderItemComponent from "./components/HeaderItemComponent/HeaderItemComponent";
+import ItemHeaderComponent from "./components/ItemHeaderComponent/ItemHeaderComponent";
 import SectionComponent from "./components/SectionComponent/SectionComponent";
 
 import { Container } from "./styles";
@@ -24,7 +24,7 @@ const ItemScreen: React.FC = () => {
 
   return (
     <Container margintop={headerHeight}>
-      <HeaderItemComponent />
+      <ItemHeaderComponent />
       {currentItem?.item?.sections?.map((option) => (
         <SectionComponent key={option.name} option={option} />
       ))}

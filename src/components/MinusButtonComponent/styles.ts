@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export const ButtonContainer = styled.button`
   display: flex;
-  background-color: transparent;
+  background-color: ${({ theme }) => theme.colors.Transparent};
   border: none;
   cursor: pointer;
   padding: 0;

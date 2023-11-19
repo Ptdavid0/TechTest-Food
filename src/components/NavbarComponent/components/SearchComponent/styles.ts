@@ -6,10 +6,10 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
 
-  border: 1px solid #cdd1d9;
+  border: 0.063rem solid ${({ theme }) => theme.colors.Neutrals200};
   border-radius: ${pxToRem(8)};
   width: ${pxToRem(340)};
-  background-color: #fff;
+  background-color: ${({ theme }) => theme.colors.Neutrals0};
   padding: ${pxToRem(8)} 0;
 
   @media screen and (${devices.tablet}) {
@@ -28,7 +28,7 @@ export const StyledInput = styled.input`
   outline: none;
   width: 90%;
 
-  color: #6d6f73;
+  color: ${({ theme }) => theme.colors.Neutrals500};
   font-family: Nunito;
   font-size: ${pxToRem(14)};
   font-style: normal;

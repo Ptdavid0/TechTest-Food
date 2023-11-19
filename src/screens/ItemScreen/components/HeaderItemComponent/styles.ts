@@ -6,14 +6,14 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
 
-  border-bottom: 1px solid #eef0f5;
+  border-bottom: 0.063rem solid ${({ theme }) => theme.colors.Neutrals100};
 `;
 
 export const TitleContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 8px;
+  gap: 0.5rem;
 
   padding: ${pxToRem(24)} ${pxToRem(84)};
 
@@ -39,7 +39,7 @@ export const ItemContainer = styled.div`
 
   > img {
     object-fit: contain;
-    border-radius: 8px;
+    border-radius: 0.5rem;
 
     @media screen and (${devices.tablet}) {
       width: 100%;
@@ -60,7 +60,7 @@ export const InfoContainer = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 6px;
+  gap: 0.375rem;
 
   @media screen and (${devices.tablet}) {
     width: 100%;
@@ -70,11 +70,11 @@ export const InfoContainer = styled.div`
 export const TopInfoContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 0.375rem;
 `;
 
 export const ItemNameText = styled.span`
-  color: #393a3c;
+  color: ${({ theme }) => theme.colors.Neutrals700};
   font-family: Nunito;
   font-size: ${pxToRem(24)};
   font-style: normal;
@@ -83,7 +83,7 @@ export const ItemNameText = styled.span`
 `;
 
 export const ItemDescriptionText = styled.span`
-  color: #6d6f73;
+  color: ${({ theme }) => theme.colors.Neutrals500};
   font-family: Nunito;
   font-size: 1rem;
   font-style: normal;
@@ -95,11 +95,11 @@ export const PriceContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 8px;
+  gap: 0.5rem;
 `;
 
 export const ItemPriceDescriptionText = styled.span`
-  color: #6d6f73;
+  color: ${({ theme }) => theme.colors.Neutrals500};
   font-family: Nunito;
   font-size: 1rem;
   font-style: normal;
@@ -108,7 +108,7 @@ export const ItemPriceDescriptionText = styled.span`
 `;
 
 export const ItemPriceText = styled.span`
-  color: #7b1fa2;
+  color: ${({ theme }) => theme.colors.Purple500};
   font-family: Nunito;
   font-size: ${pxToRem(16)};
   font-style: normal;
@@ -133,11 +133,11 @@ export const QuantityContainer = styled.div`
 export const LeftQuantityContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 0.375rem;
 `;
 
 export const QuantityTitle = styled.span`
-  color: #393a3c;
+  color: ${({ theme }) => theme.colors.Neutrals700};
   font-family: Nunito;
   font-size: 1rem;
   font-style: normal;
@@ -149,11 +149,11 @@ export const TotalContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 4px;
+  gap: 0.25rem;
 `;
 
 export const TotalDescriptionText = styled.span`
-  color: #6d6f73;
+  color: ${({ theme }) => theme.colors.Neutrals500};
   font-family: Nunito;
   font-size: ${pxToRem(14)};
   font-style: normal;
@@ -162,7 +162,7 @@ export const TotalDescriptionText = styled.span`
 `;
 
 export const TotalPriceText = styled.span`
-  color: #393a3c;
+  color: ${({ theme }) => theme.colors.Neutrals700};
   font-family: Nunito;
   font-size: ${pxToRem(14)};
   font-style: normal;

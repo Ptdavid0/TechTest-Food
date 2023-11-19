@@ -9,7 +9,7 @@ export const Container = styled.div`
   gap: ${pxToRem(16)};
 
   width: ${pxToRem(342)};
-  padding: 4px 0;
+  padding: 0.25rem 0;
 
   @media screen and (${devices.tablet}) {
     width: 100%;

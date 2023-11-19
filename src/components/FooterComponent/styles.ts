@@ -2,7 +2,7 @@ import { devices } from "@utils/styles";
 import styled from "styled-components";
 
 export const Container = styled.footer`
-  background-color: #eef0f5;
+  background-color: ${({ theme }) => theme.colors.Neutrals100};
   width: 100%;
   padding: 2rem 0;
 
@@ -19,7 +19,7 @@ export const CopyrigthText = styled.span`
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  color: #580f78;
+  color: ${({ theme }) => theme.colors.Purple700};
 
   @media screen and (${devices.mobileL}) {
     font-size: 0.875rem;
@@ -35,7 +35,7 @@ export const MessageFromCompanyText = styled.span`
   font-style: normal;
   font-weight: 700;
   line-height: 1.188rem;
-  color: #580f78;
+  color: ${({ theme }) => theme.colors.Purple700};
 
   @media screen and (${devices.mobileL}) {
     font-size: 0.75rem;

@@ -1,20 +1,22 @@
 import styled from "styled-components";
 
+import theme from "src/theme/theme";
+
 const backgroundVariant = {
-  dark: "#393A3C",
-  light: "#FFFFFF",
+  dark: theme.colors.Neutrals700,
+  light: theme.colors.Neutrals0,
 };
 
 const colorVariant = {
-  dark: "#FFFFFF",
-  light: "#393A3C",
+  dark: theme.colors.Neutrals0,
+  light: theme.colors.Neutrals700,
 };
 
 export const Container = styled.div<{
   variant: "dark" | "light";
 }>`
-  border-radius: 4px;
-  padding: 4px 0.5rem;
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.5rem;
   background-color: ${({ variant }) => backgroundVariant[variant]};
 
   font-family: Nunito;

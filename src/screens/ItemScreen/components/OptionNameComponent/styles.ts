@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { devices, pxToRem } from "@utils/styles";
 
 export const NameText = styled.span`
-  color: #6d6f73;
+  color: ${({ theme }) => theme.colors.Neutrals500};
   font-family: Nunito;
   font-size: ${pxToRem(14)};
   font-style: normal;
@@ -14,7 +14,7 @@ export const NameText = styled.span`
 export const NameContainer = styled.div`
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 0.25rem;
 
   > img {
     width: 100%;

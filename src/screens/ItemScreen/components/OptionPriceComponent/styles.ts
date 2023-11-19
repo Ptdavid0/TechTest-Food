@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { pxToRem } from "@utils/styles";
 
 export const OptionValueText = styled.span`
-  color: #7b1fa2;
+  color: ${({ theme }) => theme.colors.Purple500};
   font-family: Nunito;
   font-size: ${pxToRem(14)};
   font-style: normal;
@@ -14,11 +14,11 @@ export const OptionValueText = styled.span`
 export const SaleContainer = styled.div`
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 0.25rem;
 `;
 
 export const InitialSaleText = styled.span`
-  color: #6d6f73;
+  color: ${({ theme }) => theme.colors.Neutrals500};
   font-family: Nunito;
   font-size: ${pxToRem(12)};
   font-style: normal;
@@ -27,7 +27,7 @@ export const InitialSaleText = styled.span`
 `;
 
 export const SaleValueText = styled.span`
-  color: #02a117;
+  color: ${({ theme }) => theme.colors.Green500};
   font-family: Nunito;
   font-size: ${pxToRem(14)};
   font-style: normal;

@@ -9,13 +9,13 @@ export const Container = styled.div`
   justify-content: center;
 
   padding: ${pxToRem(24)};
-  border-top: 1px solid #eef0f5;
+  border-top: 0.063rem solid ${({ theme }) => theme.colors.Neutrals100};
 `;
 
 export const TextArea = styled.textarea`
   width: 40%;
-  border: 1px solid #cdd1d9;
-  border-radius: 4px;
+  border: 0.063rem solid ${({ theme }) => theme.colors.Neutrals200};
+  border-radius: 0.25rem;
   padding: ${pxToRem(12)};
 
   font-family: Nunito;

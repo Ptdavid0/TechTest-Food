@@ -1,16 +1,18 @@
-import { devices } from "@utils/styles";
 import styled from "styled-components";
 
+import theme from "src/theme/theme";
+import { pxToRem } from "@utils/styles";
+
 const backgroundVariant = {
-  success: "#00A296",
-  neutral: "#6D6F73",
-  clear: "#F8ECFE",
+  success: theme.colors.Teal400,
+  neutral: theme.colors.Neutrals500,
+  clear: theme.colors.Purple50,
 };
 
 const colorVariant = {
-  success: "#FFFFFF",
-  neutral: "#FFFFFF",
-  clear: "#7B1FA2",
+  success: theme.colors.Neutrals0,
+  neutral: theme.colors.Neutrals0,
+  clear: theme.colors.Purple500,
 };
 
 export const Container = styled.button<{
@@ -20,9 +22,9 @@ export const Container = styled.button<{
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: ${pxToRem(10)};
 
-  border-radius: 8px;
+  border-radius: 0.5rem;
   padding: ${({ icon }) =>
     icon ? "0.5rem 1.5rem 0.5rem 1rem;" : "0.5rem 1.5rem"};
   background-color: ${({ variant }) => backgroundVariant[variant]};

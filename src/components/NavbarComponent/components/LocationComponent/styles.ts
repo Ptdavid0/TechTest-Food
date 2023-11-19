@@ -16,11 +16,11 @@ export const InfoContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 2px;
+  gap: 0.125rem;
 `;
 
 export const DeliveryText = styled.span`
-  color: #eecffc;
+  color: ${({ theme }) => theme.colors.Purple50};
   font-size: ${pxToRem(14)};
   font-style: normal;
   font-weight: 700;
@@ -28,7 +28,7 @@ export const DeliveryText = styled.span`
 `;
 
 export const AddressButton = styled.button`
-  color: #ffffff;
+  color: ${({ theme }) => theme.colors.Neutrals0};
   font-family: Nunito;
   font-size: ${pxToRem(18)};
   font-style: normal;
@@ -43,5 +43,5 @@ export const AddressButton = styled.button`
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 4px;
+  gap: 0.25rem;
 `;

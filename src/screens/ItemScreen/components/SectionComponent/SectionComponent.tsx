@@ -19,10 +19,28 @@ interface SectionInterface {
 }
 
 const SectionComponent: React.FC<SectionInterface> = ({ option }) => {
-  const [selectedOption, setSelectedOption] = React.useState(null);
+  const [selections, setSelections] = React.useState({});
 
-  const handleRadioChange = (value: any) => {
-    setSelectedOption(value);
+  const handleSelectionChange = (
+    sectionName: string | number,
+    value: any,
+    isCheckbox = false
+  ) => {
+    setSelections((prevSelections: { [key: string]: any }) => {
+      if (isCheckbox) {
+        // For checkboxes, toggle the value in the array
+        const currentSelections = prevSelections[sectionName] || [];
+        return {
+          ...prevSelections,
+          [sectionName]: currentSelections.includes(value)
+            ? currentSelections.filter((item: any) => item !== value)
+            : [...currentSelections, value],
+        };
+      } else {
+        // For radio buttons, set the value directly
+        return { ...prevSelections, [sectionName]: value };
+      }
+    });
   };
 
   const displayPrice = (index: number) =>
@@ -48,8 +66,8 @@ const SectionComponent: React.FC<SectionInterface> = ({ option }) => {
             sectionName={option.name}
             isAddition={option.isAddition}
             displayPrice={displayPrice(index)}
-            selectedOption={selectedOption}
-            onRadioChange={handleRadioChange}
+            onSelectionChange={handleSelectionChange}
+            selections={selections}
           />
         ))}
       </BottomContainer>

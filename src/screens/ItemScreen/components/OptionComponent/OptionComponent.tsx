@@ -8,14 +8,19 @@ import OptionPriceComponent from "../OptionPriceComponent/OptionPriceComponent";
 import RadioButtonComponent from "@components/RadioButtonComponent/RadioButtonComponent";
 
 import { Container, LeftContainer } from "./styles";
+import CheckboxComponent from "@components/CheckboxComponent/CheckboxComponent";
 interface OptionInterface {
   uiType: string;
   option: Options;
   sectionName: string;
   isAddition?: boolean;
   displayPrice?: boolean | undefined;
-  selectedOption?: any;
-  onRadioChange: (value: any) => void;
+  onSelectionChange: (
+    sectionOptionKey: string,
+    value: any,
+    isCheckbox?: boolean
+  ) => void;
+  selections: { [key: string]: any };
 }
 
 const OptionComponent: React.FC<OptionInterface> = ({
@@ -24,10 +29,22 @@ const OptionComponent: React.FC<OptionInterface> = ({
   sectionName,
   isAddition = false,
   displayPrice = false,
-  onRadioChange,
-  selectedOption,
+  onSelectionChange,
+  selections,
 }) => {
   const { updateSelection, currentTicket } = useTicket();
+
+  const sectionOptionKey = `${sectionName}-${option.name}`;
+
+  const isSelected = () => {
+    if (uiType === "CHECKBOX") {
+      const key = `${sectionName}-${option.name}`;
+      return selections[key]?.includes(option.name) ?? false;
+    } else {
+      // For radio buttons, the section name is sufficient to identify the selected option
+      return selections[sectionName] === option.name;
+    }
+  };
 
   const handleCounterChange = (newQuantity: number) => {
     updateSelection(
@@ -44,7 +61,14 @@ const OptionComponent: React.FC<OptionInterface> = ({
   }) => {
     const isChecked = event.target.checked;
     const optionType = event.target.type.toUpperCase();
-    if (optionType === "RADIO") onRadioChange(option.name);
+
+    if (optionType === "RADIO") {
+      // Use 'sectionName' for radio buttons
+      onSelectionChange(sectionName, option.name);
+    } else if (optionType === "CHECKBOX") {
+      // Use 'sectionOptionKey' for checkboxes
+      onSelectionChange(sectionOptionKey, option.name, true);
+    }
 
     updateSelection(
       optionType,
@@ -69,14 +93,14 @@ const OptionComponent: React.FC<OptionInterface> = ({
       <RadioButtonComponent
         value={option.name}
         onChange={handleRadioCheckboxChange}
-        checked={selectedOption === option.name}
+        checked={isSelected()}
       />
     ),
     CHECKBOX: (
-      <input
-        type="checkbox"
+      <CheckboxComponent
         value={option.name}
         onChange={handleRadioCheckboxChange}
+        checked={isSelected()}
       />
     ),
   };

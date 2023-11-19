@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import { devices, pxToRem } from "@utils/styles";
+
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -13,13 +15,17 @@ export const TitleContainer = styled.div`
   align-items: center;
   gap: 8px;
 
-  padding: 24px 84px;
+  padding: ${pxToRem(24)} ${pxToRem(84)};
+
+  @media screen and (${devices.laptop}) {
+    padding: ${pxToRem(24)} ${pxToRem(42)};
+  }
 `;
 
 export const CompanyNameText = styled.span`
   color: #202326;
   font-family: Nunito;
-  font-size: 24px;
+  font-size: ${pxToRem(24)};
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -28,9 +34,25 @@ export const CompanyNameText = styled.span`
 export const ItemContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  gap: 24px;
+  gap: ${pxToRem(24)};
+  padding: 0 ${pxToRem(132)} ${pxToRem(24)} ${pxToRem(132)};
 
-  padding: 0 132px 24px 132px;
+  > img {
+    object-fit: contain;
+    border-radius: 8px;
+
+    @media screen and (${devices.tablet}) {
+      width: 100%;
+    }
+  }
+
+  @media screen and (${devices.laptop}) {
+    padding: 0 ${pxToRem(66)} ${pxToRem(24)} ${pxToRem(66)};
+  }
+
+  @media screen and (${devices.tablet}) {
+    flex-wrap: wrap-reverse;
+  }
 `;
 
 export const InfoContainer = styled.div`
@@ -39,6 +61,10 @@ export const InfoContainer = styled.div`
   align-items: flex-start;
   justify-content: space-between;
   gap: 6px;
+
+  @media screen and (${devices.tablet}) {
+    width: 100%;
+  }
 `;
 
 export const TopInfoContainer = styled.div`
@@ -50,7 +76,7 @@ export const TopInfoContainer = styled.div`
 export const ItemNameText = styled.span`
   color: #393a3c;
   font-family: Nunito;
-  font-size: 24px;
+  font-size: ${pxToRem(24)};
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -59,7 +85,7 @@ export const ItemNameText = styled.span`
 export const ItemDescriptionText = styled.span`
   color: #6d6f73;
   font-family: Nunito;
-  font-size: 16px;
+  font-size: 1rem;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -75,7 +101,7 @@ export const PriceContainer = styled.div`
 export const ItemPriceDescriptionText = styled.span`
   color: #6d6f73;
   font-family: Nunito;
-  font-size: 16px;
+  font-size: 1rem;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -84,7 +110,7 @@ export const ItemPriceDescriptionText = styled.span`
 export const ItemPriceText = styled.span`
   color: #7b1fa2;
   font-family: Nunito;
-  font-size: 20px;
+  font-size: ${pxToRem(16)};
   font-style: normal;
   font-weight: 800;
   line-height: normal;
@@ -96,7 +122,12 @@ export const QuantityContainer = styled.div`
   justify-content: space-between;
 
   width: 100%;
-  padding: 8px 0;
+  padding: 0.5rem 0;
+
+  @media screen and (${devices.tablet}) {
+    flex-direction: row;
+    align-items: center;
+  }
 `;
 
 export const LeftQuantityContainer = styled.div`
@@ -108,7 +139,7 @@ export const LeftQuantityContainer = styled.div`
 export const QuantityTitle = styled.span`
   color: #393a3c;
   font-family: Nunito;
-  font-size: 16px;
+  font-size: 1rem;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -124,17 +155,17 @@ export const TotalContainer = styled.div`
 export const TotalDescriptionText = styled.span`
   color: #6d6f73;
   font-family: Nunito;
-  font-size: 14px;
+  font-size: ${pxToRem(14)};
   font-style: normal;
   font-weight: 600;
-  line-height: 19px;
+  line-height: ${pxToRem(19)};
 `;
 
 export const TotalPriceText = styled.span`
   color: #393a3c;
   font-family: Nunito;
-  font-size: 14px;
+  font-size: ${pxToRem(14)};
   font-style: normal;
   font-weight: 700;
-  line-height: 19px;
+  line-height: ${pxToRem(19)};
 `;

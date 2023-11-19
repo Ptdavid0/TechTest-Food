@@ -1,19 +1,25 @@
 import styled from "styled-components";
 
+import { devices, pxToRem } from "@utils/styles";
+
 export const Container = styled.div`
   display: flex;
   align-items: center;
 
   border: 1px solid #cdd1d9;
-  border-radius: 8px;
-  width: 420px;
+  border-radius: ${pxToRem(8)};
+  width: ${pxToRem(340)};
   background-color: #fff;
-  padding: 8px 0px;
+  padding: ${pxToRem(8)} 0;
+
+  @media screen and (${devices.tablet}) {
+    display: none;
+  }
 `;
 
 export const Icon = styled.img`
-  margin-left: 12px;
-  margin-right: 8px;
+  margin-left: ${pxToRem(12)};
+  margin-right: ${pxToRem(8)};
 `;
 
 export const StyledInput = styled.input`
@@ -24,10 +30,10 @@ export const StyledInput = styled.input`
 
   color: #6d6f73;
   font-family: Nunito;
-  font-size: 14px;
+  font-size: ${pxToRem(14)};
   font-style: normal;
   font-weight: 600;
-  line-height: 19px;
+  line-height: ${pxToRem(19)};
 
   opacity: 0.7;
 `;

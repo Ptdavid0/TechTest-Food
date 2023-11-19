@@ -7,6 +7,7 @@ import OptionPriceComponent from "../OptionPriceComponent/OptionPriceComponent";
 import { useTicket } from "../../../../contexts/TicketContext/TicketContext";
 
 import { Container, LeftContainer } from "./styles";
+import RadioButtonComponent from "../../../../components/RadioButtonComponent/RadioButtonComponent";
 
 interface OptionInterface {
   uiType: string;
@@ -63,10 +64,10 @@ const OptionComponent: React.FC<OptionInterface> = ({
       />
     ),
     RADIO: (
-      <input
-        type="radio"
-        {...register(registrationKey)}
+      <RadioButtonComponent
         value={option.name}
+        register={register}
+        registrationKey={registrationKey}
         onChange={handleRadioCheckboxChange}
       />
     ),

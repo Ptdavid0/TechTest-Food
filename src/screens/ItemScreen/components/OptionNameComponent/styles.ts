@@ -1,16 +1,27 @@
 import styled from "styled-components";
 
+import { devices, pxToRem } from "@utils/styles";
+
 export const NameText = styled.span`
   color: #6d6f73;
   font-family: Nunito;
-  font-size: 14px;
+  font-size: ${pxToRem(14)};
   font-style: normal;
   font-weight: 400;
-  line-height: 19px;
+  line-height: ${pxToRem(19)};
 `;
 
 export const NameContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 4px;
+
+  > img {
+    width: 100%;
+    object-fit: contain;
+
+    @media screen and (${devices.tablet}) {
+      width: 1.25rem;
+    }
+  }
 `;

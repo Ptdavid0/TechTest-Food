@@ -1,3 +1,4 @@
+import { devices } from "@utils/styles";
 import styled from "styled-components";
 
 export const Container = styled.div`
@@ -12,10 +13,10 @@ export const QuantityText = styled.span<{
 }>`
   color: #393a3c;
   font-family: Nunito;
-  font-size: ${({ size }) => (size === "MEDIUM" ? "14px" : "16px")};
+  font-size: ${({ size }) => (size === "MEDIUM" ? "0.875rem" : "1rem")};
   font-style: normal;
   font-weight: 700;
-  line-height: ${({ size }) => (size === "MEDIUM" ? "19px" : "normal")};
+  line-height: ${({ size }) => (size === "MEDIUM" ? "1.188rem" : "normal")};
 
   padding: 0 8px;
 `;
@@ -29,4 +30,12 @@ export const TrashButton = styled.button`
   outline: none;
   padding: 0;
   margin: 0;
+
+  > img {
+    width: 100%;
+    object-fit: contain;
+    @media screen and (${devices.laptop}) {
+      width: 80%;
+    }
+  }
 `;

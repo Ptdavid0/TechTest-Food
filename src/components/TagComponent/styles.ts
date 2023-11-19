@@ -14,11 +14,11 @@ export const Container = styled.div<{
   variant: "dark" | "light";
 }>`
   border-radius: 4px;
-  padding: 4px 8px;
+  padding: 4px 0.5rem;
   background-color: ${({ variant }) => backgroundVariant[variant]};
 
   font-family: Nunito;
-  font-size: 12px;
+  font-size: 0.75rem;
   font-style: normal;
   font-weight: 700;
   line-height: normal;

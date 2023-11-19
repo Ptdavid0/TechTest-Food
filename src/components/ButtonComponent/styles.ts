@@ -1,3 +1,4 @@
+import { devices } from "@utils/styles";
 import styled from "styled-components";
 
 const backgroundVariant = {
@@ -22,14 +23,15 @@ export const Container = styled.button<{
   gap: 10px;
 
   border-radius: 8px;
-  padding: ${({ icon }) => (icon ? "8px 24px 8px 16px;" : "8px 24px")};
+  padding: ${({ icon }) =>
+    icon ? "0.5rem 1.5rem 0.5rem 1rem;" : "0.5rem 1.5rem"};
   background-color: ${({ variant }) => backgroundVariant[variant]};
   border: none;
   outline: none;
   cursor: pointer;
 
   font-family: Nunito;
-  font-size: 16px;
+  font-size: 1rem;
   font-style: normal;
   font-weight: 800;
   line-height: normal;

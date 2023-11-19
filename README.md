@@ -9,8 +9,9 @@ Projeto desenvolvido para o desafio da Aiqfome.
 - [Vite](https://vitejs.dev/)
 - [React](https://pt-br.reactjs.org/)
 - [React Router](https://reactrouter.com/)
-- [Styled Components](https://styled-components.com/)
 - [React Hook Form](https://react-hook-form.com/)
+- [Vite Plugin SVGR](https://github.com/pd4d10/vite-plugin-svgr)
+- [Styled Components](https://styled-components.com/)
 
 ## Como rodar
 
@@ -18,6 +19,40 @@ Projeto desenvolvido para o desafio da Aiqfome.
 - Instale as dependências com `yarn`
 - Inicie o servidor com `yarn dev`
 - Acesse `http://localhost:3000`
+
+## Estrutura de pastas
+
+Estrutura principal de pastas do projeto:
+
+```
+src
+├── assets
+│   ├── icons
+│   └── images
+├── components
+│   ├── ButtonComponent
+│   ├── CheckboxComponent
+│   ├── CounterComponent
+│   ├── FooterComponent
+│   ├── MinusComponent
+│   ├── NavbarComponent
+│   ├── PlusComponent
+│   ├── RadioButtonComponent
+│   └── TagComponent
+├── contexts
+│   └── TicketContext
+├── mock
+│   └── data.json
+├── routes
+│   └── Router.tsx
+├── screens
+│   └── ItemScreen
+├── types
+│   └── item.d.ts
+├── utils
+│   └── numberUtils.ts
+└── App.tsx
+```
 
 ## Autor
 

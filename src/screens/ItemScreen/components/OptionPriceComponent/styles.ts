@@ -1,12 +1,14 @@
 import styled from "styled-components";
 
+import { pxToRem } from "@utils/styles";
+
 export const OptionValueText = styled.span`
   color: #7b1fa2;
   font-family: Nunito;
-  font-size: 14px;
+  font-size: ${pxToRem(14)};
   font-style: normal;
   font-weight: 700;
-  line-height: 19px;
+  line-height: ${pxToRem(19)};
 `;
 
 export const SaleContainer = styled.div`
@@ -18,7 +20,7 @@ export const SaleContainer = styled.div`
 export const InitialSaleText = styled.span`
   color: #6d6f73;
   font-family: Nunito;
-  font-size: 12px;
+  font-size: ${pxToRem(12)};
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -27,8 +29,8 @@ export const InitialSaleText = styled.span`
 export const SaleValueText = styled.span`
   color: #02a117;
   font-family: Nunito;
-  font-size: 14px;
+  font-size: ${pxToRem(14)};
   font-style: normal;
   font-weight: 700;
-  line-height: 19px;
+  line-height: ${pxToRem(19)};
 `;

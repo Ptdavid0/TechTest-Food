@@ -1,9 +1,15 @@
 import styled from "styled-components";
 
+import { devices, pxToRem } from "@utils/styles";
+
 export const Container = styled.div`
   display: flex;
   flex-direction: row;
-  gap: 10px;
+  gap: ${pxToRem(8)};
+
+  @media screen and (${devices.mobileL}) {
+    display: none;
+  }
 `;
 
 export const InfoContainer = styled.div`
@@ -15,16 +21,16 @@ export const InfoContainer = styled.div`
 
 export const DeliveryText = styled.span`
   color: #eecffc;
-  font-size: 14px;
+  font-size: ${pxToRem(14)};
   font-style: normal;
   font-weight: 700;
-  line-height: 19px;
+  line-height: ${pxToRem(19)};
 `;
 
 export const AddressButton = styled.button`
   color: #ffffff;
   font-family: Nunito;
-  font-size: 18px;
+  font-size: ${pxToRem(18)};
   font-style: normal;
   font-weight: 700;
   line-height: normal;

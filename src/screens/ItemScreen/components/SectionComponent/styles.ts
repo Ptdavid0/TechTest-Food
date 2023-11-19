@@ -1,8 +1,14 @@
 import styled from "styled-components";
 
+import { devices, pxToRem } from "@utils/styles";
+
 export const Container = styled.div`
-  padding: 24px 132px;
+  padding: ${pxToRem(24)} ${pxToRem(132)};
   border: 1px solid #eef0f5;
+
+  @media screen and (${devices.laptop}) {
+    padding: ${pxToRem(24)} ${pxToRem(66)};
+  }
 `;
 
 export const TopContainer = styled.div`
@@ -20,7 +26,7 @@ export const InfoContainer = styled.div`
 export const SectionName = styled.span`
   color: #202326;
   font-family: Nunito;
-  font-size: 16px;
+  font-size: 1rem;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -29,7 +35,7 @@ export const SectionName = styled.span`
 export const SectionDescription = styled.span`
   color: #6d6f73;
   font-family: Nunito;
-  font-size: 12px;
+  font-size: ${pxToRem(12)};
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -37,7 +43,16 @@ export const SectionDescription = styled.span`
 
 export const BottomContainer = styled.div`
   display: flex;
-  gap: 60px;
+  gap: ${pxToRem(60)};
+  flex-wrap: wrap;
+  margin-top: 1rem;
 
-  margin-top: 16px;
+  @media screen and (${devices.laptop}) {
+    gap: ${pxToRem(30)};
+  }
+
+  @media screen and (${devices.tablet}) {
+    gap: 0;
+    justify-content: space-between;
+  }
 `;

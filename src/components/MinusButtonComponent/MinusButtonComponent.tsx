@@ -1,8 +1,8 @@
 import React from "react";
 
-import mediumMinusActive from "../../assets/icons/mediumMinusActive.svg";
-import mediumMinusDisabled from "../../assets/icons/mediumMinusDisabled.svg";
-import largeMinusActive from "../../assets/icons/largeMinusActive.svg";
+import mediumMinusActive from "@assets/icons/mediumMinusActive.svg";
+import mediumMinusDisabled from "@assets/icons/mediumMinusDisabled.svg";
+import largeMinusActive from "@assets/icons/largeMinusActive.svg";
 
 import { ButtonContainer } from "./styles";
 

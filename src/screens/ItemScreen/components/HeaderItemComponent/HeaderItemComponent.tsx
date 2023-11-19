@@ -1,14 +1,14 @@
 import React from "react";
 
-import { formatNumberToCurrency } from "../../../../utils/numberUtils";
-import { useTicket } from "../../../../contexts/TicketContext/TicketContext";
+import { formatNumberToCurrency } from "@utils/numberUtils";
+import { useTicket } from "@contexts/TicketContext/TicketContext";
 
-import ButtonComponent from "../../../../components/ButtonComponent/ButtonComponent";
-import CounterComponent from "../../../../components/CounterComponent/CounterComponent";
+import ButtonComponent from "@components/ButtonComponent/ButtonComponent";
+import CounterComponent from "@components/CounterComponent/CounterComponent";
 
 // Images are mocked for the sake of the test
-import Logo from "../../../../assets/images/matsuri_logo.png";
-import CevicheImage from "../../../../assets/images/ceviche.png";
+import Logo from "@assets/images/matsuri_logo.png";
+import CevicheImage from "@assets/images/ceviche.png";
 
 import {
   Container,

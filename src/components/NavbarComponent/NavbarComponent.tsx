@@ -1,16 +1,16 @@
 import React from "react";
 
-import CompanyLogo from "../../assets/icons/aiq_branding.svg";
-import TicketIcon from "../../assets/icons/ticket.svg";
-import UserIcon from "../../assets/icons/user.svg";
+import CompanyLogo from "@assets/icons/aiq_branding.svg";
+import TicketIcon from "@assets/icons/ticket.svg";
+import UserIcon from "@assets/icons/user.svg";
 
 import LocationComponent from "./components/LocationComponent/LocationComponent";
 import SearchComponent from "./components/SearchComponent/SearchComponent";
-import ButtonComponent from "../ButtonComponent/ButtonComponent";
+import ButtonComponent from "@components/ButtonComponent/ButtonComponent";
 
 import { Container, ButtonsContainer } from "./styles";
 
-import { useTicket } from "../../contexts/TicketContext/TicketContext";
+import { useTicket } from "@contexts/TicketContext/TicketContext";
 
 const NavbarComponent: React.FC = () => {
   const { currentTicket } = useTicket();

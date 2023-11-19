@@ -1,6 +1,6 @@
 import React from "react";
 
-import TagComponent from "../../../../components/TagComponent/TagComponent";
+import TagComponent from "@components/TagComponent/TagComponent";
 import OptionComponent from "../OptionComponent/OptionComponent";
 
 import { useForm } from "react-hook-form";

@@ -1,7 +1,7 @@
 import React from "react";
 
-import mediumPlusActive from "../../assets/icons/mediumPlusActive.svg";
-import largePlusActive from "../../assets/icons/largePlusActive.svg";
+import mediumPlusActive from "@assets/icons/mediumPlusActive.svg";
+import largePlusActive from "@assets/icons/largePlusActive.svg";
 
 import { ButtonContainer } from "./styles";
 interface PlusButtonComponentProps {

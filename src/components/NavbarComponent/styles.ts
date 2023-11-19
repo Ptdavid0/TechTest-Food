@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
-import { devices, pxToRem } from "../../utils/styles";
+import { devices, pxToRem } from "@utils/styles";
 
 export const Container = styled.header`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 
-  background-color: #7b1fa2;
+  background-color: ${({ theme }) => theme.colors.Purple500};
   padding: ${pxToRem(12)} ${pxToRem(84)};
 
   position: fixed;

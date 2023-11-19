@@ -1,4 +1,4 @@
-import { formatNumberToCurrency } from "../../../../utils/numberUtils";
+import { formatNumberToCurrency } from "@utils/numberUtils";
 
 import {
   OptionValueText,

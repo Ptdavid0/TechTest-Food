@@ -1,14 +1,14 @@
 import React from "react";
-import { FieldValues, UseFormRegister } from "react-hook-form";
 
-import CounterComponent from "../../../../components/CounterComponent/CounterComponent";
+import { FieldValues, UseFormRegister } from "react-hook-form";
+import { useTicket } from "@contexts/TicketContext/TicketContext";
+
+import CounterComponent from "@components/CounterComponent/CounterComponent";
 import OptionNameComponent from "../OptionNameComponent/OptionNameComponent";
 import OptionPriceComponent from "../OptionPriceComponent/OptionPriceComponent";
-import { useTicket } from "../../../../contexts/TicketContext/TicketContext";
+import RadioButtonComponent from "@components/RadioButtonComponent/RadioButtonComponent";
 
 import { Container, LeftContainer } from "./styles";
-import RadioButtonComponent from "../../../../components/RadioButtonComponent/RadioButtonComponent";
-
 interface OptionInterface {
   uiType: string;
   option: Options;

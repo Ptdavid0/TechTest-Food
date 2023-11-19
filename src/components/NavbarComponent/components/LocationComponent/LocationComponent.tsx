@@ -1,7 +1,7 @@
 import React from "react";
 
-import LocationIcon from "../../../../assets/icons/location.svg";
-import ArrowRight from "../../../../assets/icons/arrow_right.svg";
+import LocationIcon from "@assets/icons/location.svg";
+import ArrowRight from "@assets/icons/arrow_right.svg";
 
 import {
   Container,

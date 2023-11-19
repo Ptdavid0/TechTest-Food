@@ -1,12 +1,12 @@
 import React, { useLayoutEffect, useState } from "react";
 
+import { useTicket } from "@contexts/TicketContext/TicketContext";
+
 import ObservationComponent from "./components/ObservationComponent/ObservationComponent";
 import HeaderItemComponent from "./components/HeaderItemComponent/HeaderItemComponent";
-
-import { useTicket } from "../../contexts/TicketContext/TicketContext";
+import SectionComponent from "./components/SectionComponent/SectionComponent";
 
 import { Container } from "./styles";
-import SectionComponent from "./components/SectionComponent/SectionComponent";
 
 const ItemScreen: React.FC = () => {
   const [navbarHeight, setNavbarHeight] = useState<number | null>(null);

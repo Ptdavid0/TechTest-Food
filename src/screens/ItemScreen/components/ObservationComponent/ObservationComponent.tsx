@@ -1,6 +1,6 @@
 import React from "react";
 
-import { useTicket } from "../../../../contexts/TicketContext/TicketContext";
+import { useTicket } from "@contexts/TicketContext/TicketContext";
 
 import { Container, TextArea } from "./styles";
 

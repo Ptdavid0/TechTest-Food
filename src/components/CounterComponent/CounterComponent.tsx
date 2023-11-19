@@ -1,9 +1,9 @@
 import React from "react";
 
-import MinusButtonComponent from "../MinusButtonComponent/MinusButtonComponent";
-import PlusButtonComponent from "../PlusButtonComponent/PlusButtonComponent";
+import MinusButtonComponent from "@components/MinusButtonComponent/MinusButtonComponent";
+import PlusButtonComponent from "@components/PlusButtonComponent/PlusButtonComponent";
 
-import TrashIcon from "../../assets/icons/trash.svg";
+import TrashIcon from "@assets/icons/trash.svg";
 import { Container, QuantityText, TrashButton } from "./styles";
 
 interface CounterComponentProps {

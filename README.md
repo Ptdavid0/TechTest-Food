@@ -17,6 +17,8 @@ Projeto desenvolvido para o desafio da Aiqfome.
 - [Vite Tsconfig Paths](https://www.npmjs.com/package/vite-tsconfig-paths)
 - [Styled Components](https://styled-components.com/)
 - [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
+- [Husky](https://typicode.github.io/husky/#/)
+- [Lint Staged](https://github.com/lint-staged/lint-staged)
 
 ## Como rodar
 
@@ -39,6 +41,7 @@ Estrutura principal de pastas do projeto:
 - theme -> Temas da aplicação, como cores e fontes
 - types -> Tipos da aplicação
 - utils -> Funções utilitárias, utilizadas nesse projeto para formatar valores e funções de estilo
+- .husky -> Configurações do Husky
 
 ## FAQ
 

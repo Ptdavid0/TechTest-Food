@@ -1,7 +1,6 @@
 import React from "react";
 
 import { Container } from "./styles";
-
 interface TagComponentProps {
   text: string;
   variant: "dark" | "light";

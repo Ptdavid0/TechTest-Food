@@ -2,7 +2,7 @@ import { createGlobalStyle } from "styled-components";
 import { devices } from "@utils/styles";
 
 export const GlobalStyle = createGlobalStyle`
-	:root {
+:root {
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;

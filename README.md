@@ -10,11 +10,13 @@ Projeto desenvolvido para o desafio da Aiqfome.
 
 - [Vite](https://vitejs.dev/)
 - [React](https://pt-br.react.dev/)
+- [Vitest](https://vitest.dev/)
 - [Typescript](https://www.typescriptlang.org/)
 - [React Router](https://reactrouter.com/)
 - [Vite Plugin SVGR](https://github.com/pd4d10/vite-plugin-svgr)
 - [Vite Tsconfig Paths](https://www.npmjs.com/package/vite-tsconfig-paths)
 - [Styled Components](https://styled-components.com/)
+- [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
 
 ## Como rodar
 
@@ -31,8 +33,9 @@ Estrutura principal de pastas do projeto:
 - components -> Componentes reutilizáveis e customizados
 - contexts -> Contextos da aplicação, utilizado nesse projeto para gerenciar o ticket
 - mocks -> Mocks de dados, utilizado nesse projeto para simular uma API
-- routes -> Rotas da aplicação, utilizado nesse projeto para gerenciar a rota da tela de item
 - pages -> Telas da aplicação, utilizado nesse projeto para gerenciar a tela de item
+- routes -> Rotas da aplicação, utilizado nesse projeto para gerenciar a rota da tela de item
+- tests -> Configurações de testes e Helpers de testes
 - theme -> Temas da aplicação, como cores e fontes
 - types -> Tipos da aplicação
 - utils -> Funções utilitárias, utilizadas nesse projeto para formatar valores e funções de estilo
@@ -64,7 +67,7 @@ Estrutura principal de pastas do projeto:
 
   R: Como não há uma API para consumir os dados, foi utilizado um Mock para simular o consumo de uma API. Mas poderia ser utilizado o [Json Server](https://www.npmjs.com/package/json-server) para simular uma API.
 
-- Porque usar Component, Page e outros no nome dos componentes?
+- Porque usar Component, Page e outros termos no nome dos componentes?
 
   R: Para facilitar a identificação de onde o componente está sendo utilizado, além de facilitar a busca por componentes.
 

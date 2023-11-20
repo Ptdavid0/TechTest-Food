@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
-import theme from "src/theme/theme";
 import { pxToRem } from "@utils/styles";
+
+import theme from "src/theme/theme";
 
 const backgroundVariant = {
   success: theme.colors.Teal400,

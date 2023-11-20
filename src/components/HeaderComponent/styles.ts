@@ -47,8 +47,6 @@ export const ButtonsContainer = styled.div`
   }
 `;
 
-// Location
-
 export const LocationContainer = styled.div`
   display: flex;
   flex-direction: row;
@@ -90,8 +88,6 @@ export const AddressButton = styled.button`
   align-items: center;
   gap: 0.25rem;
 `;
-
-// Search
 
 export const SearchContainer = styled.div`
   display: flex;

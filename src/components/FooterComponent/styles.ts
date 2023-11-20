@@ -1,5 +1,6 @@
-import { devices } from "@utils/styles";
 import styled from "styled-components";
+
+import { devices } from "@utils/styles";
 
 export const Container = styled.footer`
   background-color: ${({ theme }) => theme.colors.Neutrals100};

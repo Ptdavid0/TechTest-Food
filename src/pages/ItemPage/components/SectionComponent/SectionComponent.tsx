@@ -11,7 +11,6 @@ import {
   SectionDescription,
   BottomContainer,
 } from "./styles";
-
 interface SectionInterface {
   section: Section;
 }

@@ -9,7 +9,6 @@ export interface TicketInterface {
   selections?: Record<string, any>;
   observation?: string;
 }
-
 export interface TicketContextInterface {
   currentItem: FoodItem | null;
   currentTicket: TicketInterface | null;
@@ -131,7 +130,7 @@ export const TicketProvider: React.FunctionComponent<{
     }
   };
 
-  // Calculate the total price of the ticket
+  // Calculate the total price of the ticket. "qual o tamanho?" is a special case, it should be handled by the API or by some key in the JSON
   const calculateTotal = () => {
     if (!currentTicket || !currentTicket.selections) return 0;
 
@@ -192,8 +191,8 @@ export const TicketProvider: React.FunctionComponent<{
         updateSelection,
         setCurrentTicket,
         handleObservation,
-        increaseTicketQuantity,
         decreaseTicketQuantity,
+        increaseTicketQuantity,
       }}
     >
       {children}

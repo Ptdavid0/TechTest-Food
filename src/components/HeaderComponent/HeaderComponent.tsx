@@ -31,7 +31,7 @@ const HeaderComponent: React.FC = () => {
     Object.keys(currentTicket).length === 0 ||
     currentTicket?.quantity === 0;
 
-  // THIS IS A MOCKED ADDRESS
+  // This is a mock address, but it should be fetched from the API or from the user's location
   const address = "Rua Mandaguari, 198";
 
   return (

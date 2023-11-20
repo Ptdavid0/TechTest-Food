@@ -1,11 +1,11 @@
 import React from "react";
+
 import {
   CheckboxInput,
   CheckboxWrapper,
   StyledCheckboxSVGClicked,
   StyledCheckboxSVGNotClicked,
 } from "./styles";
-
 interface CheckboxComponentInterface {
   value: string;
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;

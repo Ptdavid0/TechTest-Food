@@ -1,7 +1,6 @@
 import CifraIcon from "@assets/icons/cifra.svg";
 
 import { NameContainer, NameText } from "./styles";
-
 interface OptionNameInterface {
   name: string;
   discountPrice?: number;

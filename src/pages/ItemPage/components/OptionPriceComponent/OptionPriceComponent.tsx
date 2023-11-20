@@ -8,7 +8,6 @@ import {
   SaleContainer,
   SaleValueText,
 } from "./styles";
-
 interface PriceInterface {
   option: Options;
   displayPrice?: boolean;

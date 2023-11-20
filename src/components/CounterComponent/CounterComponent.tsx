@@ -4,6 +4,7 @@ import MinusButtonComponent from "@components/MinusButtonComponent/MinusButtonCo
 import PlusButtonComponent from "@components/PlusButtonComponent/PlusButtonComponent";
 
 import TrashIcon from "@assets/icons/trash.svg";
+
 import { Container, QuantityText, TrashButton } from "./styles";
 
 interface CounterComponentProps {

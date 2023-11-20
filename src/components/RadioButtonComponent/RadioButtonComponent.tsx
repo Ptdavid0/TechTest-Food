@@ -1,11 +1,11 @@
 import React from "react";
+
 import {
   RadioInput,
   RadioWrapper,
   StyledRadioSVGClicked,
   StyledRadioSVGNotClicked,
 } from "./styles";
-
 interface RadioButtonComponentInterface {
   value: string;
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;

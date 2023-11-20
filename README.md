@@ -1,6 +1,6 @@
 # Aiqfome
 
-![Banner Image](`src/assets/images/aiqfome_banner.png`)
+<img src="src/assets/images/aiqfome_banner.png">
 
 ## Descrição
 

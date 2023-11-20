@@ -1,5 +1,7 @@
 # Aiqfome
 
+![Banner Image](`src/assets/images/aiqfome_banner.png`)
+
 ## Descrição
 
 Projeto desenvolvido para o desafio da Aiqfome.

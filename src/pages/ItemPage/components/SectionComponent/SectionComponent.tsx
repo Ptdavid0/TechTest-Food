@@ -24,13 +24,13 @@ const SectionComponent: React.FC<SectionInterface> = ({ section }) => {
     value: string,
     isCheckbox = false
   ) => {
-    setSelections((prevSelections: { [key: string]: any }) => {
+    setSelections((prevSelections: { [key: string]: String[] }) => {
       if (isCheckbox) {
         const currentSelections = prevSelections[sectionName] || [];
         return {
           ...prevSelections,
           [sectionName]: currentSelections.includes(value)
-            ? currentSelections.filter((item: any) => item !== value)
+            ? currentSelections.filter((item) => item !== value)
             : [...currentSelections, value],
         };
       } else {
@@ -58,12 +58,12 @@ const SectionComponent: React.FC<SectionInterface> = ({ section }) => {
           <OptionComponent
             uiType={section.type}
             option={currentOption}
+            selections={selections}
             key={currentOption.name}
             sectionName={section.name}
             isAddition={section.isAddition}
             displayPrice={displayPrice(index)}
             onSelectionChange={handleSelectionChange}
-            selections={selections}
           />
         ))}
       </BottomContainer>

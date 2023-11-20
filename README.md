@@ -13,8 +13,8 @@ Projeto desenvolvido para o desafio da Aiqfome.
 - [Typescript](https://www.typescriptlang.org/)
 - [React Router](https://reactrouter.com/)
 - [Vite Plugin SVGR](https://github.com/pd4d10/vite-plugin-svgr)
-- [Styled Components](https://styled-components.com/)
 - [Vite Tsconfig Paths](https://www.npmjs.com/package/vite-tsconfig-paths)
+- [Styled Components](https://styled-components.com/)
 
 ## Como rodar
 
@@ -32,7 +32,7 @@ Estrutura principal de pastas do projeto:
 - contexts -> Contextos da aplicação, utilizado nesse projeto para gerenciar o ticket
 - mocks -> Mocks de dados, utilizado nesse projeto para simular uma API
 - routes -> Rotas da aplicação, utilizado nesse projeto para gerenciar a rota da tela de item
-- screens -> Telas da aplicação, utilizado nesse projeto para gerenciar a tela de item
+- pages -> Telas da aplicação, utilizado nesse projeto para gerenciar a tela de item
 - theme -> Temas da aplicação, como cores e fontes
 - types -> Tipos da aplicação
 - utils -> Funções utilitárias, utilizadas nesse projeto para formatar valores e funções de estilo
@@ -51,26 +51,26 @@ Estrutura principal de pastas do projeto:
 
   Adicionar suporte a ele em:
 
-  - `src/screens/ItemScreen/ItemScreen.tsx`
-  - `src/screens/ItemScreen/components/OptionComponent.tsx`
+  - `src/screens/ItemPage/ItemPage.tsx`
+  - `src/screens/ItemPage/components/OptionComponent.tsx`
   - `src/contexts/TicketContext/TicketContext.tsx`
 
   Caso tenha um comportamento de nome e preço diferente dos atuais, modifique os arquivos:
 
-  - `src/screens/ItemScreen/components/OptionNameComponent/OptionNameComponent.tsx`
-  - `src/screens/ItemScreen/components/OptionPriceComponent/OptionPriceComponent.tsx`
+  - `src/screens/ItemPage/components/OptionNameComponent/OptionNameComponent.tsx`
+  - `src/screens/ItemPage/components/OptionPriceComponent/OptionPriceComponent.tsx`
 
 - Porque usar um Mock para os dados?
 
   R: Como não há uma API para consumir os dados, foi utilizado um Mock para simular o consumo de uma API. Mas poderia ser utilizado o [Json Server](https://www.npmjs.com/package/json-server) para simular uma API.
 
-- Porque usar Component, Screen e outros no nome dos componentes?
+- Porque usar Component, Page e outros no nome dos componentes?
 
   R: Para facilitar a identificação de onde o componente está sendo utilizado, além de facilitar a busca por componentes.
 
 - Porque não foi utilizado o [Create React App](https://create-react-app.dev/) e sim o [Vite](https://vitejs.dev/)?
 
-  R: O Vite é um bundler mais rápido que o CRA, além de ser mais simples de configurar. Mas, as SVGs deram um pouco de trabalho para serem configuradas. Por isso, foi utilizado o [Vite Plugin SVGR](https://github.com/pd4d10/vite-plugin-svgr)
+  R: O Vite é um bundler mais rápido que o CRA, além de ser mais simples de configurar. Mas, as SVGs deram um pouco de trabalho para serem configuradas. Por isso, foi utilizado o [Vite Plugin SVGR](https://github.com/pd4d10/vite-plugin-svgr).
 
 - Porque adicionar rotas se só há uma tela?
 

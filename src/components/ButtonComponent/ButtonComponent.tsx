@@ -15,7 +15,7 @@ const ButtonComponent: React.FC<ButtonComponentProps> = ({
   onClick,
 }) => {
   return (
-    <Container variant={variant} icon={!!icon} onClick={onClick}>
+    <Container variant={variant} hasIcon={!!icon} onClick={onClick}>
       {icon && <img src={icon} alt="Button Icon" />}
       {text}
     </Container>

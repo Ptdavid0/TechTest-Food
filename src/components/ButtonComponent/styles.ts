@@ -17,7 +17,7 @@ const colorVariant = {
 
 export const Container = styled.button<{
   variant: "success" | "neutral" | "clear";
-  icon?: boolean;
+  hasIcon?: boolean;
 }>`
   display: flex;
   justify-content: center;
@@ -25,8 +25,8 @@ export const Container = styled.button<{
   gap: ${pxToRem(10)};
 
   border-radius: 0.5rem;
-  padding: ${({ icon }) =>
-    icon ? "0.5rem 1.5rem 0.5rem 1rem;" : "0.5rem 1.5rem"};
+  padding: ${({ hasIcon }) =>
+    hasIcon ? "0.5rem 1.5rem 0.5rem 1rem;" : "0.5rem 1.5rem"};
   background-color: ${({ variant }) => backgroundVariant[variant]};
   border: none;
   outline: none;

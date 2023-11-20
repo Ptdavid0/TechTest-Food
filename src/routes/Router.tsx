@@ -1,10 +1,10 @@
 import { Routes, Route } from "react-router-dom";
-import ItemScreen from "../screens/ItemScreen/ItemScreen";
+import ItemPage from "../pages/ItemPage/ItemPage";
 
 const Router = () => {
   return (
     <Routes>
-      <Route path="/" element={<ItemScreen />}></Route>
+      <Route path="/" element={<ItemPage />}></Route>
     </Routes>
   );
 };

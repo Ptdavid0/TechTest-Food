@@ -19,7 +19,7 @@ export interface TicketContextInterface {
   increaseTicketQuantity: () => void;
   decreaseTicketQuantity: () => void;
   updateSelection: (
-    type: any,
+    type: "COUNTER" | "RADIO" | "CHECKBOX",
     sectionName: string | number,
     optionName: string | number,
     value: number,
@@ -76,7 +76,7 @@ export const TicketProvider: React.FunctionComponent<{
     sectionName: string | number,
     optionName: string | number,
     value: number,
-    price: any
+    price: number
   ) => {
     if (!currentTicket) return;
 

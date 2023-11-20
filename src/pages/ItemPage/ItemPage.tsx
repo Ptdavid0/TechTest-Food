@@ -11,7 +11,7 @@ import theme from "src/theme/theme";
 
 import { Container } from "./styles";
 
-const ItemScreen: React.FC = () => {
+const ItemPage: React.FC = () => {
   const [headerHeight, setHeaderHeight] = useState<number | null>(null);
 
   const { currentItem } = useTicket();
@@ -42,4 +42,4 @@ const ItemScreen: React.FC = () => {
   );
 };
 
-export default ItemScreen;
+export default ItemPage;

@@ -65,7 +65,7 @@ const OptionComponent: React.FC<OptionInterface> = ({
     target: { checked: any; type: string };
   }) => {
     const isChecked = event.target.checked;
-    const optionType = event.target.type.toUpperCase();
+    const optionType = event.target.type.toUpperCase() as keyof OptionType;
 
     if (optionType === "RADIO") {
       onSelectionChange(sectionName, option.name);

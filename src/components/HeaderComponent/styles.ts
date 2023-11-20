@@ -5,7 +5,6 @@ import { devices, pxToRem } from "@utils/styles";
 export const Container = styled.header`
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
 
   background-color: ${({ theme }) => theme.colors.Purple500};
   padding: ${pxToRem(12)} ${pxToRem(84)};
@@ -27,22 +26,40 @@ export const Container = styled.header`
     padding: ${pxToRem(12)} ${pxToRem(42)};
   }
 
+  @media screen and (${devices.laptop}) {
+    justify-content: space-between;
+  }
+
   @media screen and (${devices.mobileL}) {
-    padding: ${pxToRem(6)} ${pxToRem(42)};
+    padding: ${pxToRem(12)} ${pxToRem(42)};
+  }
+`;
+
+export const LeftWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 2.5rem;
+  width: 33%;
+
+  @media screen and (${devices.tablet}) {
+    width: auto;
   }
 `;
 
 export const ButtonsContainer = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-end;
   gap: ${pxToRem(24)};
+  width: 33%;
 
-  @media screen and (${devices.laptop}) {
+  @media screen and (${devices.tablet}) {
     gap: ${pxToRem(12)};
+    width: 100%;
   }
 
-  @media screen and (${devices.mobileM}) {
+  @media screen and (${devices.mobileL}) {
     display: none;
   }
 `;
@@ -52,7 +69,7 @@ export const LocationContainer = styled.div`
   flex-direction: row;
   gap: ${pxToRem(8)};
 
-  @media screen and (${devices.mobileL}) {
+  @media screen and (${devices.laptop}) {
     display: none;
   }
 `;
@@ -89,19 +106,27 @@ export const AddressButton = styled.button`
   gap: 0.25rem;
 `;
 
-export const SearchContainer = styled.div`
+export const SearchWrapper = styled.div`
+  width: 33%;
   display: flex;
   align-items: center;
-
-  border: 0.0625rem solid ${({ theme }) => theme.colors.Neutrals200};
-  border-radius: ${pxToRem(8)};
-  width: ${pxToRem(340)};
-  background-color: ${({ theme }) => theme.colors.Neutrals0};
-  padding: ${pxToRem(8)} 0;
+  justify-content: center;
 
   @media screen and (${devices.tablet}) {
     display: none;
   }
+`;
+
+export const SearchContainer = styled.div`
+  display: flex;
+  align-items: center;
+
+  max-width: ${pxToRem(420)};
+  border: 0.0625rem solid ${({ theme }) => theme.colors.Neutrals200};
+  border-radius: ${pxToRem(8)};
+  width: 100%;
+  background-color: ${({ theme }) => theme.colors.Neutrals0};
+  padding: ${pxToRem(8)} 0;
 `;
 
 export const Icon = styled.img`

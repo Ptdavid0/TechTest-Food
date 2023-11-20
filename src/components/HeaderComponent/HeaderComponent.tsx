@@ -21,6 +21,8 @@ import {
   Icon,
   SearchContainer,
   LocationContainer,
+  LeftWrapper,
+  SearchWrapper,
 } from "./styles";
 
 const HeaderComponent: React.FC = () => {
@@ -36,22 +38,28 @@ const HeaderComponent: React.FC = () => {
 
   return (
     <Container id="header">
-      <img src={CompanyLogo} alt="Aiqfome Logo" />
+      <LeftWrapper>
+        <img src={CompanyLogo} alt="Aiqfome Logo" />
+        <LocationContainer>
+          <img src={LocationIcon} alt="Location" />
+          <InfoContainer>
+            <DeliveryText>entregando em</DeliveryText>
+            <AddressButton>
+              {address} <img src={ArrowRight} alt="Arrow Right" />
+            </AddressButton>
+          </InfoContainer>
+        </LocationContainer>
+      </LeftWrapper>
 
-      <LocationContainer>
-        <img src={LocationIcon} alt="Location" />
-        <InfoContainer>
-          <DeliveryText>entregando em</DeliveryText>
-          <AddressButton>
-            {address} <img src={ArrowRight} alt="Arrow Right" />
-          </AddressButton>
-        </InfoContainer>
-      </LocationContainer>
-
-      <SearchContainer>
-        <Icon src={SearchIcon} alt="Search Icon" />
-        <StyledInput type="text" placeholder="busque pela loja ou culinária" />
-      </SearchContainer>
+      <SearchWrapper>
+        <SearchContainer>
+          <Icon src={SearchIcon} alt="Search Icon" />
+          <StyledInput
+            type="text"
+            placeholder="busque pela loja ou culinária"
+          />
+        </SearchContainer>
+      </SearchWrapper>
 
       <ButtonsContainer>
         {!isTicketEmpty && (

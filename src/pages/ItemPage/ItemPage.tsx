@@ -33,7 +33,11 @@ const ItemPage: React.FC = () => {
       <Divider />
       {currentItem?.item?.sections?.map((section) => (
         <React.Fragment key={`${section.name}-Container`}>
-          <SectionComponent key={section.name} section={section} />
+          <SectionComponent
+            key={section.name}
+            section={section}
+            data-testid="section-component"
+          />
           <Divider key={`${section.name}-Divider`} />
         </React.Fragment>
       ))}

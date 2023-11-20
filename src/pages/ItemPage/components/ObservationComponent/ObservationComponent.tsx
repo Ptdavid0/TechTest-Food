@@ -8,7 +8,7 @@ const ObservationComponent: React.FC = () => {
   const { handleObservation, currentTicket } = useTicket();
 
   return (
-    <Container>
+    <Container data-testid="observation-component">
       <TextArea
         placeholder={
           "alguma observação do item? • opcional\nex: tirar algum ingrediente, ponto do prato"

@@ -39,7 +39,7 @@ const ItemHeaderComponent: React.FC = () => {
   } = useTicket();
 
   return (
-    <Container>
+    <Container data-testid="item-header-component">
       <TitleContainer>
         <img src={Logo} alt={currentItem?.company?.name} />
         <CompanyNameText>{currentItem?.company?.name}</CompanyNameText>

@@ -27,7 +27,11 @@ const MinusButtonComponent: React.FC<MinusButtonComponentProps> = ({
   const LargeSVG = <img src={largeMinusActive} alt="large minus" />;
 
   return (
-    <ButtonContainer onClick={decreaseFunction} disabled={disabled}>
+    <ButtonContainer
+      onClick={decreaseFunction}
+      disabled={disabled}
+      data-testid="minus-button"
+    >
       {size === "MEDIUM" ? MediumSVG : LargeSVG}
     </ButtonContainer>
   );

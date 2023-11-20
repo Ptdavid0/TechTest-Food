@@ -5,7 +5,7 @@ import theme from "src/theme/theme";
 import { Container } from "./styles";
 
 interface DividerComponentProps {
-  color: string;
+  color?: string;
 }
 
 const DividerComponent: React.FC<DividerComponentProps> = ({

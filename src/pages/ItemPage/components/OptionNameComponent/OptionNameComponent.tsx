@@ -4,7 +4,7 @@ import { NameContainer, NameText } from "./styles";
 
 interface OptionNameInterface {
   name: string;
-  discountPrice?: number | null;
+  discountPrice?: number;
 }
 
 const OptionNameComponent: React.FC<OptionNameInterface> = ({

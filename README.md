@@ -6,6 +6,15 @@
 
 Projeto desenvolvido para o desafio da Aiqfome.
 
+- Responsividade inicial para LaptopL, Laptop, Tablet e Mobiles(L,M,S)
+- Testes unitários com React Testing Library e Vitest
+- Husky e Lint Staged para Pre-Commit
+- Configurações de caminhos absolutos com Vite Tsconfig Paths
+- Configurações de temas (cores e fontes)
+- Configurações de SVGs
+- Gestão de rotas com React Router
+- Gerenciamento de estado com Context API
+
 ## Tecnologias
 
 - [Vite](https://vitejs.dev/)

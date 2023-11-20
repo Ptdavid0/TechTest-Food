@@ -25,18 +25,15 @@ Projeto desenvolvido para o desafio da Aiqfome.
 
 Estrutura principal de pastas do projeto:
 
-```
-	@assets -> Arquivos estáticos como imagens e icones
-	@components -> Componentes reutilizáveis e customizados
-	@contexts -> Contextos da aplicação, utilizado nesse projeto para gerenciar o ticket
-	@mocks -> Mocks de dados, utilizado nesse projeto para simular uma API
-	@routes -> Rotas da aplicação, utilizado nesse projeto para gerenciar a rota da tela de item
-	@screens -> Telas da aplicação, utilizado nesse projeto para gerenciar a tela de item
-	@theme -> Temas da aplicação, como cores e fontes
-	@types -> Tipos da aplicação
-	@utils -> Funções utilitárias, utilizadas nesse projeto para formatar valores e funções de estilo
-
-```
+- assets -> Arquivos estáticos como imagens e icones
+- components -> Componentes reutilizáveis e customizados
+- contexts -> Contextos da aplicação, utilizado nesse projeto para gerenciar o ticket
+- mocks -> Mocks de dados, utilizado nesse projeto para simular uma API
+- routes -> Rotas da aplicação, utilizado nesse projeto para gerenciar a rota da tela de item
+- screens -> Telas da aplicação, utilizado nesse projeto para gerenciar a tela de item
+- theme -> Temas da aplicação, como cores e fontes
+- types -> Tipos da aplicação
+- utils -> Funções utilitárias, utilizadas nesse projeto para formatar valores e funções de estilo
 
 ## FAQ
 
@@ -46,7 +43,7 @@ Estrutura principal de pastas do projeto:
 
   Inicialmente, foram aplicados 3 tipos de sections: Checkbox, Radio Button e Counter. Mas, se houver a necessidade de adicionar mais tipos, basta:
 
-  Criar um componente customizado(caso desejado):
+  Criar um componente customizado(caso desejado) em:
 
   - `src/components`
 

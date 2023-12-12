@@ -1,6 +1,4 @@
-# Aiqfome
-
-<img src="src/assets/images/aiqfome_banner.png">
+# Tech Test - Food Company
 
 ## Descrição
 

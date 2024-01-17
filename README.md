@@ -2,7 +2,7 @@
 
 ## Descrição
 
-Projeto desenvolvido para o desafio da Aiqfome.
+Projeto desenvolvido para o desafio de uma empresa Tech Food.
 
 - Responsividade inicial para LaptopL, Laptop, Tablet e Mobiles(L,M,S)
 - Testes unitários com React Testing Library e Vitest
